@@ -1,0 +1,377 @@
+/* Media Query */
+@media(min-width: 1921px) {
+    .header-inner .logo {
+        max-width: 270px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .main-header .search-wrapper .form-control {
+        max-width: 170px;
+        margin-right: 14px;
+    }
+
+    .job-applicant-list .profile-picture-img {
+        flex: 0 0 30%;
+    }
+
+    .job-card-cont.job-applicant {
+        flex: 1 0 70%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .step-card-inner {
+        padding: 50px 40px;
+    }
+
+    .after-line:after {
+        width: 150px;
+        height: 3px;
+    }
+
+    .after-line:before {
+        width: 80px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    .job-card-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .job-card-inner .job-card-cont,
+    .job-card-inner .job-card-btn {
+        flex: 0 0 100%;
+    }
+
+    .job-card-inner .job-card-btn {
+        margin: 20px 0;
+    }
+
+    .job-card-btn a:not(:first-child) {
+        margin-top: 0;
+    }
+
+    .job-card-btn a {
+        margin-right: 15px;
+        margin-bottom: 8px;
+    }
+
+    .job-applicant-list .job-icon-list-wrap {
+        margin-top: 15px;
+    }
+
+    .job-card-inner .job-card-cont.job-applicant {
+        padding-left: 0%;
+    }
+
+    .job-applicant-list .job-card-btn {
+        flex: 0 0 20%;
+    }
+
+    /* Create job */
+    .icon-form.right-icon .form-control {
+        padding: 14px 50px 14px 20px;
+    }
+    .icon-form.right-icon .input-icon-wrpper span {
+        left: auto;
+        right: 16px;
+        max-width: 22px;
+    }
+
+    /* Spending */
+    .filter-row {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-row label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .input-wrap input {
+        font-size: 16px;
+        padding: 10px 50px 11px 10px;
+    }
+
+    .filter-box h5 {
+        background: var(--primary-color);
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .earning-persons-list {
+        min-height: 430px;
+    }
+
+    .earning-person-img {
+        width: 46px;
+        height: 46px;
+        margin-right: 18px;
+    }
+
+    .earning-person {
+        padding: 12px 18px;
+    }
+
+    .person-name,
+    .person-earn {
+        font-size: 14px;
+    }
+
+    .spending-table th,
+    .spending-table td {
+        padding: 15px 16px;
+        font-size: 16px;
+    }
+
+    /* notification */
+    .date-tag:before,
+    .date-tag:after {
+        width: 22%;
+    }
+}
+
+@media (max-width: 991px) {
+    .profile-picture-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .profile-logo-part {
+        margin-left: auto;
+    }
+
+    .navbar-toggler {
+        padding: 0 0 0 15px;
+    }
+
+    .navbar-toggler-icon {
+        display: flex;
+        align-items: center;
+        width: auto;
+    }
+
+    #collapsibleNavbar {
+        order: 2;
+    }
+
+    .navbar-nav {
+        padding-top: 20px;
+        align-items: start;
+    }
+
+
+    .check-card {
+        padding: 50px 20px;
+        background: #0000;
+    }
+
+    .check-card label {
+        border-radius: 10px !important;
+        font-size: 16px;
+    }
+
+    .step-card-inner .primary-btn {
+        margin: 20px 0 20px 20px;
+    }
+
+    .main-header .navbar .navbar-nav .nav-link {
+        margin: 10px 0;
+    }
+
+    .navbar-toggler img+img {
+        display: none;
+        max-width: 26px;
+    }
+
+    .navbar-toggler[aria-expanded="true"] img+img {
+        display: block;
+    }
+
+    .navbar-toggler[aria-expanded="true"] img {
+        display: none;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .input-wrap input {
+        font-size: 14px;
+    }
+
+    .input-wrap span img {
+        width: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .step-card-inner .primary-btn {
+        max-width: 160px;
+        margin: 10px 0 20px 20px;
+    }
+
+    #progressbar li:before {
+        width: 40px;
+        height: 40px;
+        line-height: 35px;
+    }
+
+    #progressbar li:after {
+        top: 18px;
+    }
+
+    .after-line {
+        padding-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+    .check-card-list li {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .ongoing-btn-wrap .edit-btn {
+        font-size: 16px;
+        padding: 12px 35px;
+        min-width: 180px;
+    }
+
+    .job-applicant-list .job-icon-list-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-applicant-list .job-card-btn {
+        flex: 0 0 100%;
+        margin: 20px 0 0;
+    }
+
+    .job-applicant-list .profile-picture-img {
+        flex: 0 0 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .ftr-list li a {
+        font-size: 14px;
+    }
+
+    .footer-inner p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+}
+
+@media(max-width: 575px) {
+    .container {
+        padding: 0px 20px;
+    }
+
+    .header-inner .logo {
+        max-width: 180px;
+    }
+
+    .profile-logo-part ul li a {
+        max-width: 25px;
+    }
+
+    #msform fieldset {
+        padding: 20px 20px 10px;
+    }
+
+    .icon-text {
+        padding: 10px;
+    }
+
+    .icon-text.shadow {
+        flex-wrap: wrap;
+    }
+
+    .icon-text.shadow img {
+        margin-bottom: 8px;
+    }
+
+    .job-card-inner {
+        padding: 25px 16px;
+    }
+
+    .job-card-inner .job-card-btn {
+        margin: 10px 0;
+    }
+
+    /* spending */
+    .spending-table th,
+    .spending-table td {
+        min-width: 240px;
+    }
+
+    /* notification */
+    .notification-card {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .notification-img {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        margin-right: 18px;
+        margin-bottom: 6px;
+    }
+
+    .notification-card p {
+        font-size: 14px;
+    }
+
+    .notification-card small {
+        position: absolute;
+        right: 16px;
+        top: 15px;
+    }
+
+    .date-tag {
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .notification-list-container .notification-list-wrapper:not(:first-child) .date-tag {
+        margin: 15px;
+    }
+}
+
+@media(max-width:481px) {
+    div.ongoing-btn-wrap .edit-btn {
+        margin: 0 0 8px;
+    }
+}
+
+@media (max-width: 414px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .header-inner .logo {
+        max-width: 100%;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .header-inner .logo img {
+        max-width: 180px;
+    }
+
+    .profile-logo-part,
+    .navbar-toggler {
+        margin: 30px 0 0;
+    }
+}
