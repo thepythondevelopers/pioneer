@@ -1,12 +1,12 @@
-<footer class="site-footer bg-dark p-60">
+<footer class="site-footer bg-dark">
       <div class="container">
         <div class="footer-inner">
           <ul class="ftr-list">
             <li>
-              <a href="#">About</a>
+              <a href="{{route('destination.about')}}">About</a>
             </li>
             <li>
-              <a href="#">Terms</a>
+              <a href="{{route('destination.terms')}}">Terms</a>
             </li>
             <li>
               <a href="#">Privacy</a>

@@ -1,3 +1,6 @@
+body{
+    background-color: #f0f0f0;
+}
 /* Login Page */
 .login-section {
     background-image: url(../images/login/login-bg.png);
@@ -21,7 +24,7 @@
 }
 
 .login-img {
-    padding: 100px;
+    padding: 0 100px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -37,15 +40,16 @@
     justify-content: center;
     flex-direction: column;
 }
-
 .login-form-wrapper .logo {
     display: inline-block;
-    margin-bottom: 80px;
-    max-width: 340px;
+    margin-bottom: 50px;
+    max-width: 260px;
 }
-
+.login-Form .form-group {
+    margin-bottom: 34px !important;
+}
 .form-design input {
-    padding: 25px 20px 24px 70px;
+    padding: 18px 20px 18px 70px;
     border-radius: 10px;
     background-color: #ffffff52;
     color: #fff;
@@ -65,17 +69,6 @@
     line-height: 28px;
 }
 
-.input-icon-wrpper {
-    position: relative;
-}
-
-.input-icon-wrpper span {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 14px;
-}
-
 .two-column {
     display: flex;
     align-items: center;
@@ -90,10 +83,10 @@
     color: #fff;
 }
 
-.form-control:focus {
+/* .form-control:focus {
     outline: 0;
     box-shadow: none;
-}
+} */
 
 .forgot-link {
     color: #fff;
@@ -175,9 +168,19 @@
 
 
 /* Media Query */
+@media (min-width: 1199px){
+    .login-img figure {
+        max-width: 80%;
+    }
+}
 @media(min-width: 1921px){
     .wmax-1920 {
         max-width: 1920px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1920px){
+    .container-1440 {
+        max-width: 1140px !important;
     }
 }
 
@@ -285,4 +288,10 @@
         margin-bottom: 40px;
         max-width: 240px;
     }
+    .step-card-inner {
+        padding: 16px;
+      }
 }
+
+
+

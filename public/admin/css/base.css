@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Reset css */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --primary-color:#000;
+    --secondry-color:#fa006e;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+a,a:hover{
+    text-decoration: none;
+    transition: all 0.2s ease-in-out 0.1s;
+}
+a:hover,
+a:focus,
+button:hover,
+button:focus{
+    outline: 0 !important;
+    border: 0;
+    box-shadow: none !important;
+}
+.text-underline{
+    text-decoration: underline;
+}
+ul,li,ol{
+    margin: 0;
+    padding: 0%;
+}
+figure{
+    margin: 0;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.shadow{
+    box-shadow: 0px 10px 26.97px 2.03px rgba(0, 0, 0, 0.11) !important;
+}
+/* Width */
+.small-icon {
+    width: 24px;
+    flex: 0 0 24px;
+}
+/* Background */
+.bg-dark{
+    background-color: var(--primary-color);
+}
+.bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-black-gradient{
+    background: rgb(47,50,50);
+    background: linear-gradient(260deg, rgba(47,50,50,1) 0%, rgb(69 68 69 / 38%) 100%);
+}
+.bg-pink-gradient{
+    background-image: linear-gradient(310deg,#cb0c9f,#cb0c9f);
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient(310deg,#7928ca,#ff0080);
+}
+
+/* Btn */
+.site-btn {
+    background:var(--secondry-color);
+    border: 1px solid var(--secondry-color);
+    border-radius: 50px;
+    width: 100%;
+    padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 330)));
+    font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+    color: #fff;
+    font-weight: 600;
+}
+.site-btn:hover{
+    background-color: #fff;
+    color: var(--secondry-color);
+    border:1px solid  var(--secondry-color);
+}
+.btn {
+    letter-spacing: -.025rem;
+    box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);
+    background-size: 150%;
+    background-position-x: 25%;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 22px;
+}
+.outline-btn {
+    background:#fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px 30px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.outline-btn:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.edit-btn {
+    background:var(--secondry-color);
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid var(--secondry-color);
+    border-radius: 0;
+}
+
+.edit-btn:hover{
+    color: #000;
+    border: 1px solid #000;
+}
+
+.primary-btn {
+    background: var(--secondry-color);
+    border: 1px solid var(--secondry-color);
+    width: 100%;
+    padding: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))) calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 330))) !important;
+    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))) !important;
+    color: #fff !important;
+    font-weight: 700;
+    border-radius: 50px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.primary-btn:hover,
+.primary-btn:focus{
+    background-color: #fff !important;
+    color: var(--secondry-color) !important;
+    border:1px solid var(--secondry-color) !important ;
+}
+.more-link{
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.more-link:hover{
+    opacity: 0.8;
+    color: var(--primary-color);
+}
+.btn-group .site-btn{
+    flex: 0 0 auto;
+}
+.br-10{
+    border-radius: 10px;
+}
+.br-50{
+    border-radius: 50% !important;
+}
+.br-50px{
+    border-radius: 50px !important;
+}
+.br-4{
+    border-radius: 4px;
+}
+.bl-0{
+    border-left: 0 !important;
+}
+.br-0{
+    border-right: 0 !important;
+}
+.border-radius-md {
+    border-radius: 0.5rem;
+}
+.bx-0{
+    border-right: 0 !important;
+    border-left: 0 !important;
+}
+/* Cursor */
+.pointer{
+    cursor: pointer;
+}
+/* SCroll bar */
+.scrollbar::-webkit-scrollbar-track
+{
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5; */
+    border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+
+/* Typography */
+h1, .h1{
+    font-size: 52px;
+    line-height: 64px;
+}
+
+h2, .h2{
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 600;
+}
+
+h3, .h3{
+    font-size: 38px;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+h4, .h4{
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+}
+
+h5, .h5{
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+}
+
+h6, .h6{
+    font-size: 22px;
+    line-height: 32px;
+    font-weight:600;
+}
+.fz-20{
+    font-size: 20px;
+    line-height: 30px; 
+}
+.fz-18{
+    font-size: 18px;
+    line-height: 28px; 
+}
+.text-white{
+    color: #fff;
+}
+.text-primary{
+    color: var(--secondry-color) !important;
+}
+.text-cp{
+    text-transform: capitalize;
+}
+
+.text-up{
+    text-transform: uppercase;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.fw-500{
+    font-weight: 500;;
+}
+.fw-600{
+    font-weight: 600;
+}
+
+/* Padding */
+.pt-100{
+    padding-top: 100px;
+}
+
+.pb-100{
+    padding-bottom: 100px;
+}
+
+.p-100{
+    padding: 100px 0;
+}
+
+.p-60{
+    padding: 60px 0;
+}
+
+
+.p-40{
+    padding: 40px 0;
+}
+
+/* Container */
+@media (min-width: 1920px){
+    .container-1440{
+        max-width: 1440px;
+    }
+}
+@media (max-width: 1920px){
+
+    h1, .h1{
+        font-size: calc(36px + (52 - 36) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(46px + (64 - 46) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    h2, .h2{
+        font-size: calc(24px + (42 - 24) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(30px + (52 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    h3, .h3{
+        font-size: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(30px + (48 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    h4, .h4{
+        font-size: calc(22px + (32 - 22) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(34px + (44 - 34) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    h5, .h5{
+        font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(24px + (34 - 24) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    h6, .h6{
+        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(26px + (32 - 26) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .fz-20{
+        font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .fz-18{
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(24px + (28 - 24) * ((100vw - 320px) / (1920 - 320)));
+    }
+    .pt-100{
+        padding-top: calc(40px + (100 - 40) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    .pb-100{
+        padding-bottom: calc(40px + (100 - 40) * ((100vw - 320px) / (1920 - 320)));
+    }
+    
+    .p-100{
+        padding: calc(40px + (100 - 40) * ((100vw - 320px) / (1920 - 320))) 0;
+    }
+    
+    .p-60{
+        padding: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320))) 0;
+    }
+
+    .p-40{
+        padding: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))) 0;
+    }
+}
+
+/* *********** */
+

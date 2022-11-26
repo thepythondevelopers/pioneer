@@ -1,0 +1,857 @@
+/* Media Query */
+@media(min-width: 1921px) {
+    .header-inner .logo {
+        max-width: 270px;
+    }
+    .notification-card p{
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 1600px){
+    .job-card-cont.job-applicant.pioneer-card-cont {
+        /* flex: 0 0 67%; */
+        /* padding-right: 4% !important; */
+    }
+    .job-card-btn.pioneer-card-btn {
+        /* flex: 0 0 13%; */
+    }
+}
+
+@media (max-width: 1440px) {
+    .main-header .search-wrapper .form-control {
+        max-width: 170px;
+        margin-right: 14px;
+    }
+
+    /* .job-applicant-list .profile-picture-img {
+        flex: 0 0 30%;
+    }
+
+    .job-card-cont.job-applicant {
+        flex: 1 0 70%;
+    }
+    .job-card-cont.job-applicant.pioneer-card-cont {
+        padding: 0 3% !important;
+        flex: 0 0 64%;
+    } */
+    /* .job-card-btn.pioneer-card-btn {
+        flex: 0 0 14%;
+    } */
+}
+
+@media (max-width:1366px){
+    /* .job-card-cont.job-applicant.pioneer-card-cont {
+        padding: 0 3% !important;
+        flex: 0 0 61%;
+    }
+    .job-card-btn.pioneer-card-btn {
+        flex: 0 0 17%;
+    } */
+}
+
+@media (max-width: 1199px) {
+    /* Header */
+    nav.navbar{
+        justify-content: flex-end;
+    }
+    .navbar .logo {
+        margin-right: auto;
+    }
+    .navbar-toggler {
+        padding: 0 0 0 15px;
+    }
+    
+    .navbar-toggler-icon {
+        display: flex;
+        align-items: center;
+        width: auto;
+    }
+
+    #collapsibleNavbar {
+        order: 2;
+    }
+    
+    .navbar-nav {
+        padding-top: 20px;
+        align-items: start;
+    }
+
+    .profile-picture-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .step-card-inner {
+        padding: 50px 40px;
+    }
+    .after-line:after {
+        width: 150px;
+        height: 3px;
+    }
+    .after-line:before {
+        width: 80px;
+        height: 3px;
+        bottom: -10px;
+    }
+    .main-header .navbar .navbar-nav .nav-link {
+        margin: 10px 0;
+    }
+
+    .navbar-toggler img + img {
+        display: none;
+        max-width: 26px;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] img+img {
+        display: block;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] img {
+        display: none;
+    }
+    .search-wrapper.icon-form {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    .navbar-nav {
+        align-items: center;
+    }
+    .main-header .search-wrapper .form-control {
+        max-width: 280px;
+        margin-right: 14px;
+    }
+    .profile-logo-part img {
+        max-height: 24px;
+    }
+    .profile-icon {
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    .profile-logo-part .profile-icon img {
+        max-height: 35px ;
+        max-width: 35px ;
+        object-fit: contain;
+    }
+    /* Steps */
+    .step-card-inner {
+        padding: 50px 40px;
+    }
+
+    .after-line:after {
+        width: 150px;
+        height: 3px;
+    }
+
+    .after-line:before {
+        width: 80px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    /* .job-card-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    } */
+
+    /* .job-card-inner .job-card-cont,
+    .job-card-inner .job-card-btn {
+        flex: 0 0 100%;
+    } */
+
+    .job-card-inner .job-card-btn {
+        margin: 20px 0;
+    }
+
+    .job-card-btn a:not(:first-child) {
+        margin-top: 0;
+    }
+
+    .job-card-btn a {
+        margin-right: 15px;
+        margin-bottom: 8px;
+    }
+
+    .job-applicant-list .job-icon-list-wrap {
+        margin-top: 15px;
+    }
+
+    /* .job-card-inner .job-card-cont.job-applicant {
+        padding-left: 0%;
+    } */
+
+    .job-applicant-list .job-card-btn {
+        flex: 0 0 20%;
+    }
+
+    /* Create job */
+    .icon-form.right-icon .form-control {
+        padding: 14px 50px 14px 20px;
+    }
+    .icon-form.right-icon .input-icon-wrpper span {
+        left: auto;
+        right: 16px;
+        max-width: 22px;
+    }
+
+    /* Spending */
+    .filter-row {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-row label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .input-wrap input {
+        font-size: 16px;
+        padding: 10px 50px 11px 10px;
+    }
+
+    .filter-box h5 {
+        background: var(--primary-color);
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .earning-persons-list {
+        min-height: 430px;
+    }
+
+    .earning-person-img {
+        width: 46px;
+        height: 46px;
+        margin-right: 18px;
+    }
+
+    .earning-person {
+        padding: 12px 18px;
+    }
+
+    .person-name,
+    .person-earn {
+        font-size: 14px;
+    }
+
+    .spending-table th,
+    .spending-table td {
+        padding: 15px 16px;
+        font-size: 16px;
+    }
+
+    /* notification */
+    .date-tag:before,
+    .date-tag:after {
+        width: 22%;
+    }
+
+    /* Date */
+    .chat_list {
+        padding: 12px 16px;
+    }
+    .chat_img {
+        flex: 0 0 42px;
+        max-width: 42px;
+    }
+    .mesgs .job-deatils-icons {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    .mesgs .job-card-inner .job-card-cont{
+        flex: 0 0 80%;
+    }
+    .mesgs .job-card-inner .job-card-btn{
+        flex: 0 0 20%;
+    }
+    /* greeting */
+    .greeting-content .greeting{
+        font-size: 30px;
+    }
+    .raise-diaputea-alert {
+        flex-wrap: wrap;
+        align-items: flex-start !important;
+    }
+    .rating-box{
+        width: 100%;
+    }
+    .rating-popup img {
+        max-width: 14px;
+    }
+
+    /* pioneer */
+    /* .job-card-cont.job-applicant.pioneer-card-cont {
+        padding: 0 !important;
+        flex: 0 0 80%;
+    } */
+    .poineer-text-wrap {
+        flex-direction: column;
+        grid-row-gap: 30px;
+    }
+    .certificate-box p {
+        height: 40px;
+    }
+    .profile-picture h5{
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .destination-profile .job-applicant-list .job-card-inner {
+        flex-direction: column;
+    }
+    .search-section.open {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        background: #212529a8;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        transition: all 0.2s ease-in-out 0.1s;
+    }
+    .check-card {
+        padding: 50px 20px;
+        background: #0000;
+    }
+
+    .check-card label {
+        border-radius: 10px !important;
+        font-size: 16px;
+    }
+
+    .step-card-inner .primary-btn {
+        margin: 20px 0 20px 20px;
+    }
+
+    .main-header .navbar .navbar-nav .nav-link {
+        margin: 2px 0;
+        font-size: 14px;
+    }
+    .profile-icon,
+    .profile-icon img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .navbar-toggler-icon img {
+        max-width: 26px;
+    }
+    .navbar-toggler img+img {
+        display: none;
+        max-width: 20px;
+    }
+
+    .navbar-toggler[aria-expanded="true"] img+img {
+        display: block;
+    }
+
+    .navbar-toggler[aria-expanded="true"] img {
+        display: none;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .input-wrap input {
+        font-size: 14px;
+    }
+
+    .input-wrap span img {
+        width: 16px;
+    }
+
+    /* Chat */
+    .inbox_msg {
+        flex-direction: column;
+    }
+    .inbox_people,
+    .mesgs{
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .inbox_chat {
+        height: 400px;
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+    .msg_history {
+        height: 500px;
+    }
+    .srch_bar input {
+        padding: 10px 20px 10px 40px;
+        margin: 10px ;
+    }
+    span.input-group-addon {
+        max-width: 16px;
+        margin-top: -2px;
+    }
+    /* greeting */
+    .greeting-card {
+        padding: 20px 30px;
+    }
+    .greeting-content .greeting{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .greeting-img {
+        max-width: 320px;
+    }
+    /* pioneer */
+    .pioneer-active-card .job-card-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .job-card-cont.job-applicant.pioneer-card-cont {
+        flex: 0 0 100%;
+        padding: 0 !important;
+        margin-top: 12px;
+    }
+    .job-applicant-list .job-card-btn {
+        flex: 0 0 30%;
+        margin: 20px 0 0;
+    }
+    .pioneer-apply-job .mb-5.px-5.pe-0, .pioneer-apply-job .row.flex-lg-row {
+        padding: 0 !important;
+    }
+    .pioneer-job-tabs .nav-link {
+        min-width: 225px;
+    }
+
+    /* Pioneer Setting */
+    .sectting-inner .row>div {
+        width: 100%;
+    }
+    .sectting-inner .row>div .setting-tab_content {
+        width: 100% !important;
+        display: block !important;
+    }
+    .certificates .row>div {
+        display: inline-block;
+        width: 25% !important;
+    }
+    .certificate-box p {
+        height: auto;
+    }
+    .certificate-box {
+        margin-bottom: 20px;
+    }
+    .setting-tab_content .certificates .row>div {
+        width: 50%!important;
+    }
+    .setting-tab .nav-link {
+        padding: 10px 15px;
+    }
+    div#v-pills-tab {
+        margin-bottom: 30px;
+    }
+    /* ***** */
+    .pioneer-tabs-inner, 
+    .pioneer-tabs-inner .nav-tabs {
+        width: 100%;
+    }
+    .pioneer-job-tabs .nav-link {
+        width: calc(100% / 3 - 20px);
+        min-width: auto;
+        padding: 15px;
+    }
+    .pinr_prpsl .pioneer-job-tabs .nav-link {
+        width: calc(100% / 2 - 20px);
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        padding: 20px 0;
+    }  
+    .navbar-toggler-icon {
+        max-width: 24px;
+    }
+    .profile-logo-part > ul li:not(:first-child) {
+        padding-left: 15px;
+    }
+    .profile-logo-part > ul li a img,
+    .search-section .input-icon > img {
+        max-width: 22px;
+        max-height: 22px;
+    } 
+    .profile-icon {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .profile-logo-part ul li:nth-child(2) img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .step-card-inner .primary-btn {
+        max-width: 160px;
+        margin: 10px 0 20px 20px;
+    }
+
+    #progressbar li:before {
+        width: 40px;
+        height: 40px;
+        line-height: 35px;
+    }
+
+    #progressbar li:after {
+        top: 18px;
+    }
+
+    .after-line {
+        padding-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+    .check-card-list li {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .ongoing-btn-wrap .edit-btn {
+        font-size: 16px;
+        padding: 12px 35px;
+        min-width: 180px;
+    }
+
+    .pioneer-tabs-inner {
+        padding: 10px;
+    }
+
+    .pioneer-job-tabs .nav-link {
+        min-width: 100%;
+        width: 100%;
+        padding: 12px 25px;
+    }
+
+    .job-applicant-list .job-icon-list-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-applicant-list .job-card-btn {
+        flex: 0 0 100%;
+        margin: 20px 0 0;
+    }
+
+    .job-applicant-list .profile-picture-img {
+        flex: 0 0 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .ftr-list li a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .footer-inner p {
+        font-size: 12px;
+        line-height: 22px;
+        padding: 0 10px;
+    }
+
+    /* Chat */
+    .mesgs .job-card-inner{
+        flex-wrap: nowrap;
+    }
+    .duration-box {
+        padding: 10px;
+    }
+    .duration-box span, .duration-box a {
+        font-size: 12px;
+    }
+    .chat-sec-wrap .edit-btn {
+        padding: 5px 22px;
+        font-size: 12px;
+    }
+    .incoming_msg_img {
+        flex: 0 0 45px;
+        max-width: 45px;
+    }
+    .received_withd_msg p {
+        font-size: 12px;
+    }
+    .sender-person-name{
+        font-size: 14px;
+    }
+    .type_msg {
+        height: 90px;
+        padding: 16px;
+    }
+    .date-seprater {
+        margin: 8px auto !important;
+    }
+    .date-seprater span {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    .greeting-content .greeting{
+        margin-bottom: 30px;
+    }
+    .greeting-card {
+        flex-wrap: wrap;
+    }
+    .pioneer-apply-job .row.mt-5 {
+        margin: 0 !important;
+    }
+    .pioneer-apply-job .row.mt-5 .col-md-9 {
+        padding: 0;
+    }
+    /* Pioneer Setting */
+    .certificates .row>div {
+        width: unset !important;
+    }
+    .cstm-btn-group {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    .cstm-btn-group .btn:not(:first-child) {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    .tab-content .profile-picture-img {
+        margin: 0 !important;
+    }
+    div#v-pills-profile p, div#v-pills-term p {
+        margin-top: 30px;
+    }
+    .pioneer-job-tabs .nav-link {
+        min-width: 170px;
+        padding: 12px 25px;
+        margin:0 0 10px !important;
+    }
+    .pinr_prpsl .pioneer-job-tabs .nav-link {
+        width: 100%;
+    }
+    /* setting */
+    .certificate-box {
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media(max-width: 575px) {
+    .container {
+        padding: 0px 20px;
+    }
+
+    .header-inner .logo {
+        max-width: 180px;
+    }
+
+    .poineer-text-wrap .icon-text {
+        border-radius: 10px !important;
+    }
+
+    .profile-logo-part ul li a {
+        max-width: 35px;
+    }
+
+    #msform fieldset {
+        padding: 20px 20px 10px;
+    }
+
+    .icon-text {
+        padding: 10px;
+    }
+
+    .icon-text.shadow {
+        flex-wrap: wrap;
+    }
+
+    .icon-text.shadow img {
+        margin-bottom: 8px;
+    }
+
+    .job-card-inner {
+        padding: 25px 16px;
+    }
+
+    .job-card-inner .job-card-btn {
+        margin: 10px 0;
+    }
+    /* Home */
+    .poineer-btn-grp {
+        display: flex;
+        flex-wrap: wrap;
+    }  
+    .poineer-btn-grp a{
+        margin-bottom: 10px;
+        width: auto;
+    } 
+    .pioneer-advance-popup textarea{
+        height: 100px;
+    }
+    /* spending */
+    .spending-table th,
+    .spending-table td {
+        min-width: 240px;
+    }
+
+    /* notification */
+    .notification-card {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .notification-img {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        margin-right: 18px;
+        margin-bottom: 6px;
+    }
+
+    .notification-card p {
+        font-size: 14px;
+    }
+
+    .notification-card small {
+        position: absolute;
+        right: 16px;
+        top: 15px;
+    }
+
+    .date-tag {
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .notification-list-container .notification-list-wrapper:not(:first-child) .date-tag {
+        margin: 15px;
+    }
+    .header-inner .logo img {
+        max-width: 140px;
+    }
+    .greeting-content .date {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .pioneer-job-tabs .nav-link {
+        min-width: unset;
+    }
+    .certificates .row {
+        justify-content: space-between;
+        grid-row-gap: 30px;
+    }
+    .setting-tab_content .certificates .row{
+        grid-row-gap: 0px;
+    }
+    .pagination-list ul li a {
+        height: 25px;
+        width: 25px;
+        margin: 0 4px 8px;
+    }
+    .pagination-list ul li a {
+        padding: 6px;
+    }
+    /* chat */
+    .notification-card {
+        flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+    }
+    .notification-card div.notification-img {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 26px;
+        margin-right: 18px;
+        margin-bottom: 6px;
+    }
+    .notification-img.profile img {
+        width: 100%;
+        height: 100%;
+    }
+    .notification-card small {
+        position: absolute;
+        right: 16px;
+        top: 15px;
+    }
+}
+
+@media(max-width:481px) {
+    div.ongoing-btn-wrap .edit-btn {
+        margin: 0 0 8px;
+    }
+    .mesgs .job-card-inner {
+        flex-wrap: wrap;
+    }
+    .mesgs .job-card-inner .job-card-cont, 
+    .mesgs .job-card-inner .job-card-btn {
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+    .incoming_msg_img {
+        flex: 0 0 50px;
+        max-width: 50px;
+    }
+
+    .incoming_msg {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .incoming_msg.outgoing_msg {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+    .greeting-content .greeting {
+        font-size: 15px;
+        line-height: 1.5em;
+    }  
+    .rating-popup {
+        left: 50px;
+        bottom: 30px;
+    }
+    .destination-profile .poineer-btn-grp{
+        flex-direction: column;
+    }
+    .outline-btn{
+        min-height: auto;
+        padding: 8px 30px;
+    }
+    .poineer-text-wrap .poineer-btn-grp {
+        margin-left: 0 !important;
+    }
+    .destination-profile .poineer-btn-grp a{
+        max-width: 220px;
+    } 
+    .setting-tab_content .certificates .row>div {
+        width: 100%!important;
+    }
+}
+
+@media (max-width: 414px) {
+    nav.navbar {
+        justify-content: center;
+    }
+    .search-wrapper.icon-form {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .header-inner .logo {
+        max-width: 100%;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .profile-logo-part,
+    .navbar-toggler {
+        margin: 30px 0 0;
+    }
+    .pioneer-job-tabs .nav-link {
+        min-width: 100%;
+    }
+}

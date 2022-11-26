@@ -4,66 +4,63 @@ namespace App\Http\Controllers\Destination;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Job;
+use App\Models\Notification;
 class DashboardController extends Controller
 {
     public $path ='destination.modules.';
 
-    public function create_job(){        
-        return view($this->path.'create-job');
+
+    public function home(){  
+
+        $user = Auth::user();      
+        return view($this->path.'home.home')->with('user',$user);
     }
 
-    public function home(){        
-        return view($this->path.'home');
+    public function list(){
+        $job = Job::where('created_by',Auth::user()->_id)->where('hire_status',0)->orderBy('created_at','desc')->paginate(10);
+
+        $vv = view($this->path.'home.job-list')
+                ->with('job',$job);
+        return response()->json([
+           'status' => 1,
+           'html' => $vv->render()
+        ]);
+    }
+    public function notification(){
+        $notification = Notification::where('to',Auth::user()->_id)->orderBy('created_at','desc')->get()->groupBy(function($item) {
+                    return $item->created_at->format('M  jS Y');
+                });  
+        Notification::where('to',Auth::user()->_id)->where('read_status',0)->update(['read_status'=>1]);
+        return view($this->path.'notification')->with('notification',$notification);
     }
 
-    public function notification(){        
-        return view($this->path.'notification');
-    }
+    public function notification_count(){       
+        $count = Notification::where('to',Auth::user()->_id)->where('read_status',0)->count();
+        return response()->json([
+           'status' => 1,
+           'count' => $count
+        ]);
 
-    public function chat(){        
-        return view($this->path.'chat');
-    }
+    }    
 
-    public function job_history(){        
-        return view($this->path.'job_history');
-    }
-
-    public function job_history_detail(){        
-        return view($this->path.'job_history_detail');
-    }
-
-    public function my_spending(){        
-        return view($this->path.'my_spending');
-    }
-
-    public function on_going_job(){        
-        return view($this->path.'on_going_job');
-    }
-
-    public function on_going_job_detail(){        
-        return view($this->path.'on_going_job_detail');
-    }
-
-    public function single_job_detail(){        
-        return view($this->path.'single_job_detail');
-    }
     
-    public function setting(){        
-        return view($this->path.'setting');
+
+    public function invoices(){       
+
+        return view($this->path.'invoices');
     }
 
-    public function login(){        
-        return view($this->path.'login');
-    }
+    
 
-    public function register(){        
-        return view($this->path.'register');
-    }
 
-    public function register_steps(){        
-        return view($this->path.'register-steps');
-    }
+    
+
+
+
+
+
+
+    
 }

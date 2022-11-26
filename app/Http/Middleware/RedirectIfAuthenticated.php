@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use App\Providers\RouteServiceProvider;
 use Closure;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
@@ -13,18 +12,39 @@ class RedirectIfAuthenticated
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @param  string|null  ...$guards
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param  \Closure  $next
+     * @param  string|null  $guard
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle($request, Closure $next, $guard = null)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+     
+        
+        if(Auth::user() && Auth::user()->role=='destination'){
+           if(Auth::user()->step==1){
+                return redirect()->route('destination.register.step1');
+            }elseif(Auth::user()->step==2){
+                return redirect()->route('destination.register.step2');
+            }elseif(Auth::user()->step==3){
+                return redirect()->route('destination.register.step3');
             }
+
+           return redirect()->route('destination.home'); 
+        }
+
+        if(Auth::user() && Auth::user()->role=='pioneer'){
+           if(Auth::user()->step==1){
+                return redirect()->route('pioneer.register.step1');
+            }elseif(Auth::user()->step==2){
+                return redirect()->route('pioneer.register.step2');
+            }elseif(Auth::user()->step==3){
+                return redirect()->route('pioneer.register.step3');
+            }
+           return redirect()->route('pioneer.home'); 
+        }
+
+        if(Auth::user() && Auth::user()->role=='admin'){
+            return redirect()->route('admin.dashboard');
         }
 
         return $next($request);

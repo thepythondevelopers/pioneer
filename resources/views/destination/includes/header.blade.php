@@ -2,62 +2,74 @@
     <div class="container container-1440">
       <div class="header-inner">
         <nav class="navbar navbar-expand-lg">
-          <a href="#" class="logo">
-            <img src="images/logo-white.png" alt="img">
+          <a href="{{route('destination.home')}}" class="logo">
+            <img src="{{asset('destination/images/logo-white.png')}}" alt="img">
           </a>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                @php
+                    $count =   \App\Models\Chat::where('send_to',Auth::user()->_id)->where('read_status',0)->count();
+      $count = $count==0 ? '' : $count;
+                    @endphp
             <ul class="navbar-nav">       
               <li class="nav-item">
-                  <a class="nav-link active" href="create_job.html">Create Job </a>
+                  <a class="nav-link <?= ActiveMenu(['destination.create.job'],'active') ?>" href="{{route('destination.create.job')}}">Create Job </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link " href="home.html">Home</a>
+                  <a class="nav-link <?= ActiveMenu(['destination.home'],'active') ?> " href="{{route('destination.home')}}">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Ongoing Jobs.html">My Jobs</a>
+                  <a class="nav-link <?= ActiveMenu(['destination.jobs'],'active') ?>" href="{{route('destination.jobs')}}">My Jobs</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="mySpending.html">My Spendings</a>
+                  <a class="nav-link <?= ActiveMenu(['destination.invoices'],'active') ?>" href="{{route('destination.invoices')}}">My Spending</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link " href="chat.html">Messages</a>
+                  <a class="nav-link <?= ActiveMenu(['destination.chat'],'active') ?>" href="{{route('destination.chat')}}">Messages <span class="message_total">{{$count}}</span></a>
               </li>
           </ul>
           </div>
           <div class="profile-logo-part">
             <ul>
               <li>
-                <a href="notification.html">
-                  <img src="images/icons/bell.png" alt="img">
+                <a class="counts-outer" href="{{route('destination.notification')}}">
+                  <img src="{{asset('destination/images/icons/bell.png')}}" alt="img">
+				           
+                                  <span class="counts"></span>
                 </a>
               </li>
               <li class="dropdown">               
-                <a class="btn btn-secondary profile-icon dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="images/profile-img-icon.png" alt="img">
+                <a class="btn btn-secondary profile-icon dropdown-toggle notif" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+				
+                  <img src="{{(isset(Auth::user()->logo) && Auth::user()->logo!='null') ? asset(Auth::user()->logo) : asset('destination/images/profile-img-icon.png')}}" alt="img">
                 </a>  
                 <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuLink">
                   <li></li>
-                  <li class="mb-2"><a class="dropdown-item" href="#">Account</a></li>
-                  <li class="mb-2"><a class="dropdown-item" href="#">About Us</a></li>
-                  <li class="mb-2"><a class="dropdown-item" href="#">Change Password</a></li>
-                  <li class="mb-2"><a class="dropdown-item" href="#">Setting</a></li>
-                  <li><a class="dropdown-item" href="#">Terms & Conditions</a></li>
+                  <li class="mb-2">
+                    <a class="dropdown-item cstm-drp-down" href="{{route('destination.setting').'#account'}}">
+                     Account</a></li>
+                  <li class="mb-2"><a class="dropdown-item " href="{{route('destination.about')}}">
+                 About Us</a></li>
+                  <li class="mb-2"><a class="dropdown-item cstm-drp-down" href="{{route('destination.setting').'#change-password'}}">
+                  Change Password</a></li>
+                  <li><a class="dropdown-item" href="{{route('destination.terms')}}">
+                 Terms & Conditions</a></li>
                 </ul>             
               </li>
               <li>
-                <a href="#" id="v-pills-settings-tab" data-bs-toggle="modal" data-bs-target="#logout">
-                  <img src="images/icons/exit.png" alt="img">
+                <a href="javascript:void(0)" id="v-pills-settings-tab" data-bs-toggle="modal" data-bs-target="#logout">
+                  <img src="{{asset('destination/images/icons/exit.png')}}" alt="img">
                 </a>
               </li>
             </ul>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon">
-              <img src="images/icons/menu-bar.png" alt="menu">
-              <img src="images/icons/close.png" alt="menu">
+              <img src="{{asset('destination/images/icons/menu-bar.png')}}" alt="menu">
+              <img src="{{asset('destination/images/icons/close.png')}}" alt="menu">
             </span>
           </button>
         </nav>
       </div>
     </div>
   </header>
+  
