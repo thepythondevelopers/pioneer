@@ -28,11 +28,18 @@ class InvoiceController extends Controller
         $j= Job::where('_id',$job_id)->first();
         $description = $request->description;
         $data = array();
-        foreach($description as $key=>$d){
-            
-            $d = array('description' =>$d, 'qty' => $request->qty[$key], 'amount' =>$request->amount[$key]);
-            array_push($data,$d);
+        if($request->type=='Fixed'){
+            foreach($description as $key=>$d){
+                $d = array('description' =>$d, 'qty' => 'N/A', 'amount' =>$request->amount[$key]);
+                array_push($data,$d);
+            }    
+        }else{
+            foreach($description as $key=>$d){
+                $d = array('description' =>$d, 'qty' => $request->qty[$key], 'amount' =>$request->amount[$key]);
+                array_push($data,$d);
+            }    
         }
+        
         $i = new Invoice();
         $i->data = json_encode($data);
         $i->job_id = $job_id;

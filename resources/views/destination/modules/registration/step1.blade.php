@@ -76,80 +76,116 @@
                                     <div class="col-lg-9 mt-lg-0 mt-4">
                                         <div class="row">
                                         <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                     <label class="label">First Name</label>
                                             <div class="input-icon-wrpper">
                                                 <input  type="text" class="form-control" id="first_name" placeholder="First Name"
                                                 name="first_name" value="{{$user->first_name}}">
                                             </div>
                                         </div>
                                         <div class="form-group  col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                     <label class="label">Surname</label>
                                             <div class="input-icon-wrpper">
                                                 <input  type="text" class="form-control" id="last_name" placeholder="Last Name"
                                                 name="last_name" value="{{$user->last_name}}">
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input  type="text" class="form-control" id="email" placeholder="Email Id"
-                                                name="email" value="{{$user->email}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="mobile_number" maxlength="10" placeholder="Mobile Number"
-                                                name="mobile_number" value="{{(isset($user->mobile_number) && $user->mobile_number!='null') ? $user->mobile_number : ''}}">
+                                                                                       <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Main Phone Number</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                   
+                                                        <input type="text" class="form-control" id="mobile_number" maxlength="10" placeholder="Mobile Number"
+                                                name="mobile_number" value="{{(isset($user->mobile_number) && $user->mobile_number!='null') ? $user->mobile_number : ''}}" >
                                                 <span class="tel-country-code">+44</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                  
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
                                             <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="company_name" placeholder="Company Name"
-                                                name="company_name" value="{{(isset($user->company_name) && $user->company_name!='null') ? $user->company_name : ''}}">
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="vat_number" maxlength="9" placeholder="VAT Number"
-                                                name="vat_number" value="{{(isset($user->vat_number) && $user->vat_number!='null') ? $user->vat_number : ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="company_number" maxlength="10" placeholder="Phone Number"
-                                                name="company_number" value="{{(isset($user->company_number) && $user->company_number!='null') ? $user->company_number : ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="trading" placeholder="Trading Name"
-                                                name="trading" value="{{(isset($user->trading) && $user->trading!='null') ? $user->trading : ''}}">
+                                            <label class="label">Company</label>
+                                                <input type="text" class="form-control" id="company_name" placeholder="Company"
+                                                name="company" value="{{(isset($user->company) && $user->company!='null') ? $user->company : ''}}" >
                                             </div>
                                         </div>
 
                                         <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="title" placeholder="Title"
-                                                name="title" value="{{(isset($user->title) && $user->title!='null') ? $user->title : ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="position" placeholder="Position"
-                                                name="position" value="{{(isset($user->position) && $user->position!='null') ? $user->position : ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="website" placeholder="Website"
-                                                name="website" value="{{(isset($user->website) && $user->website!='null') ? $user->website : ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="billing_address" placeholder="Billing Address"
-                                                name="billing_address" value="{{(isset($user->billing_address) && $user->billing_address!='null') ? $user->billing_address : ''}}">
-                                            </div>
-                                        </div>
+                                                <label class="label">Website Address</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="website_address"  placeholder="Website Address"
+                                                name="website_address" value="{{(isset($user->website_address) && $user->website_address!='null') ? $user->website_address : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Address1</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="address1"  placeholder="Address1"
+                                                name="address1" value="{{(isset($user->address1) && $user->address1!='null') ? $user->address1 : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Main Contact Name</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="main_contact_name"  placeholder="Main Contact Name"
+                                                name="main_contact_name" value="{{(isset($user->main_contact_name) && $user->main_contact_name!='null') ? $user->main_contact_name : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Address2</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="address2"  placeholder="Address2"
+                                                name="address2" value="{{(isset($user->address2) && $user->address2!='null') ? $user->address2 : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                    <div class="input-icon-wrpper">
+                                                    <label class="label">Main Contact Email</label>
+                                                        <input  type="text" class="form-control" id="email" placeholder="Main Contact Email"
+                                                name="email" value="{{$user->email}}" disabled>
+                                                
+                                                    </div>
+                                                </div>
+                                               
+                                               <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Town/City</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="town_city"  placeholder="Town/City"
+                                                name="town_city" value="{{(isset($user->town_city) && $user->town_city!='null') ? $user->town_city : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Finance Name</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="finance_name"  placeholder="Finance Name" name="finance_name" value="{{(isset($user->finance_name) && $user->finance_name!='null') ? $user->finance_name : ''}}" >
+                                                    </div>
+                                                </div>  
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Country</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="country"  placeholder="Country"
+                                                name="country" value="{{(isset($user->country) && $user->country!='null') ? $user->country : ''}}" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Finance Email</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="finance_email"  placeholder="Finance Email"
+                                                name="finance_email" value="{{(isset($user->finance_email) && $user->finance_email!='null') ? $user->finance_email : ''}}" >
+                                                    </div>
+                                                </div>                                        
+                                        
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Postcode</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="postcode"  placeholder="Postcode"
+                                                name="postcode" value="{{(isset($user->postcode) && $user->postcode!='null') ? $user->postcode : ''}}" >
+                                                    </div>
+                                                </div>
                                         
 
                                     </div>
@@ -157,7 +193,7 @@
                                         <div class="row wrapper">
                                             <div class="col-lg-3 col-sm-6">
                                               <div class="certificate-box">
-                                              <div class=" fz-16"><p>Insurance Document</p></div>
+                                              <div class=" fz-16"><p>Employers Liability<br> Insurance</p></div>
                                               <div class="box">
                                                     <div class="js--image-preview" style="background-image:url('{{(isset($user->certificate1) && $user->certificate1!='null') ? asset(Auth::user()->certificate1) : 'images/Resgister-step/certificate1.png'}}');">
                                                 
@@ -174,7 +210,7 @@
                                             </div>
                                             <div class="col-lg-3 col-sm-6">
                                               <div class="certificate-box">
-                                              <div class=" fz-16"><p>Certificate 1</p></div>
+                                              <div class=" fz-16"><p>Health & Safety</p></div>
                                               <div class="box">
                                                     <div class="js--image-preview" style="background-image:url('{{(isset($user->certificate2) && $user->certificate2!='null') ? asset(Auth::user()->certificate2) : 'images/Resgister-step/certificate1.png'}}');">
                                                 
@@ -190,7 +226,7 @@
                                             </div>
                                             <div class="col-lg-3 col-sm-6">
                                                 <div class="certificate-box">
-                                              <div class=" fz-16"><p>Certificate 2</p></div>
+                                              <div class=" fz-16"><p>CHAS</p></div>
                                                 <div class="box">
                                                     <div class="js--image-preview" style="background-image:url('{{(isset($user->certificate3) && $user->certificate3!='null') ? asset(Auth::user()->certificate3) : 'images/Resgister-step/certificate1.png'}}');">
                                                 
@@ -206,7 +242,7 @@
                                             </div>
                                             <div class="col-lg-3 col-sm-6">
                                                 <div class="certificate-box">
-                                              <div class=" fz-16"><p>certificate3</p></div>
+                                              <div class=" fz-16"><p>ISO</p></div>
                                                 
                                                   <div class="box">
                                                     <div class="js--image-preview" style="background-image:url('{{(isset($user->certificate4) && $user->certificate4!='null') ? asset(Auth::user()->certificate4) : 'images/Resgister-step/certificate1.png'}}');">
@@ -319,54 +355,62 @@
         minlength:3,
          maxlength:35
       },
-      'mobile_number':{
+ 'mobile_number':{
          required: true,
         nowhitespace: true,
          maxlength:10
       },
-      'company_name':{
+      'company':{
          required: true,
-        nowhitespace: true,
+        nowhitespace: true,        
          maxlength:35
-      },
-
-      'title':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'position':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'website':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'billing_address':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'company_number':{
-         required: true,
-        nowhitespace: true,
-        maxlength:10
-      },
-
-      'vat_number':{
-         required: true,
-        nowhitespace: true,
-        minlength:9,
-         maxlength:9
-      },
-      'trading':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
+        },
+        'website_address':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'address1':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'main_contact_name':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'address2':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'town_city':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'finance_name':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'country':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'finance_email':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'postcode':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+     
       'certificate1':{
            required:function(){
            const certificate1 = '<?php echo isset($user->certificate1) && $user->certificate1!=null ? 'available' : '' ?>';

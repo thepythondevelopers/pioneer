@@ -234,5 +234,14 @@ class JobController extends Controller
         
 
     }
+
+    public function applicant_profile($id){
+        $user = User::where('_id',$id);        
+        if($user->count()>0){
+            $user= $user->first();
+            return view($this->path.'job.profile')->with('user',$user);
+        }
+        abort(404);
+    }
 }    
  

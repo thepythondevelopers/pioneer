@@ -8,7 +8,7 @@
         <h6 class="job-name fw-bold"> {{$j->job_type}}</h6>
 
         <div class="newjob_detail mt-3">
-                <div class="fz-16 fw-bold rate">{{$j->hour_rate}} USD/hr</div>  
+                <div class="fz-16 fw-bold rate">{{$j->hour_rate}} {{currency()}}/hr</div>  
                 <div class="fz-16">{{$j->location}}</div>
                 
                 <div class="postdate">

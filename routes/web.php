@@ -95,12 +95,13 @@ Route::group(['middleware' => ['Destination'],'prefix' => 'destination'], functi
     //Route::get('job-history','Destination\JobController@job_history')->name('destination.job.history');
     
     
-    
+    Route::get('applicant-profile/{id}','Destination\JobController@applicant_profile')->name('destination.job.applicant.profile');
     //Route::get('on-going-job/{id}','Destination\JobController@on_going_job_detail')->name('destination.on-going-job-detail');
     Route::post('job-close-status/{id}','Destination\JobController@job_close_status')->name('destination.job.close.status');
     
     Route::get('job-applicant/{id}','Destination\JobController@job_applicant')->name('destination.job.applicant');
     Route::post('initialize-chat','Destination\JobController@initialize_chat')->name('destination.job.applicant.initialize.chat');
+    Route::post('reject-applicant','Destination\JobController@reject_applicant')->name('destination.job.applicant.reject.applicant');
     Route::get('proposal/{job_id}/{applicant_id}','Destination\JobController@proposal')->name('destination.proposal');
     Route::get('jobs','Destination\JobController@jobs')->name('destination.jobs');
     
@@ -112,7 +113,8 @@ Route::group(['middleware' => ['Destination'],'prefix' => 'destination'], functi
     Route::get('job-closed-detail/{id}','Destination\JobController@closed_job_detail')->name('destination.job.closed.detail');
 
     Route::get('job-spending-detail/{id}','Destination\JobController@job_spending_detail')->name('destination.job.spending.detail');
-
+    Route::post('job-suspend/{id}','Destination\JobController@suspend_job')->name('destination.job.suspend');
+    
     Route::get('setting','Destination\SettingController@setting')->name('destination.setting');
     Route::get('about','Destination\SettingController@about')->name('destination.about');
     Route::get('terms','Destination\SettingController@terms')->name('destination.terms');
@@ -170,6 +172,7 @@ Route::group(['middleware' => ['Pioneer'],'prefix' => 'pioneer'], function () {
     
     Route::get('jobs','Pioneer\DashboardController@jobs')->name('pioneer.jobs');
     //Route::get('active-job','Pioneer\JobController@active_job')->name('pioneer.active.job');
+    Route::get('applicant-profile/{id}','Pioneer\JobController@applicant_profile')->name('pioneer.job.applicant.profile');
     Route::get('proposal-jobs','Pioneer\JobController@proposal_jobs')->name('pioneer.proposal.jobs');
     Route::get('proposal-closed-jobs','Pioneer\JobController@proposal_closed_jobs')->name('pioneer.proposal.closed.jobs');
     Route::get('hire-job','Pioneer\JobController@hire_job')->name('pioneer.hire.job');

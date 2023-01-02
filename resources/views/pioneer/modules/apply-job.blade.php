@@ -29,7 +29,7 @@
             <div class="mb-3 ps-lg-4">
               <h5 class="mb-2 fw-bold">{{$job->title}}</h5>
               <p class="fz-16 mb-4">
-                {{$job->description}}
+                {!! $job->description !!}
               </p>
             </div>
           </div>

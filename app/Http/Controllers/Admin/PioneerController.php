@@ -67,11 +67,14 @@ class PioneerController extends Controller
       $user->first_name = $request->first_name;
       $user->last_name = $request->last_name;
       $user->mobile_number = (int)$request->mobile_number;
-      $user->dob = $request->dob;
-      $user->address = $request->address;
 
-      $user->title = $request->title;
-      $user->utr_number = $request->utr_number; 
+      $user->company = $request->company;
+      $user->address1 = $request->address1;
+        $user->address2 = $request->address2;
+    $user->town_city = $request->town_city;
+    $user->national_insurance_number = $request->national_insurance_number;
+    $user->about_us = $request->about_us;
+    $user->postcode = $request->postcode;
       
       if (!empty($request->logo)){
           (isset($user->logo) && $user->logo!='null') ? unlink(public_path($user->logo)) : '';
@@ -128,16 +131,16 @@ class PioneerController extends Controller
         $user->certificate4 = $certificate4;
     }
 
-    if (!empty($request->certificate5)){
-        (isset($user->certificate5) && $user->certificate5!='null') ? unlink(public_path($user->certificate5)) : '';
-        $time = strtotime('now').Str::random(40);
-        $ext = $request->certificate5->getClientOriginalExtension();
-        $certificate5 = $time.".".$ext;
-        $request->certificate5->move(public_path('image_data/certificate/pioneer'),$certificate5);
-        $certificate5 = $certificate_path.$certificate5;
+    // if (!empty($request->certificate5)){
+    //     (isset($user->certificate5) && $user->certificate5!='null') ? unlink(public_path($user->certificate5)) : '';
+    //     $time = strtotime('now').Str::random(40);
+    //     $ext = $request->certificate5->getClientOriginalExtension();
+    //     $certificate5 = $time.".".$ext;
+    //     $request->certificate5->move(public_path('image_data/certificate/pioneer'),$certificate5);
+    //     $certificate5 = $certificate_path.$certificate5;
 
-        $user->certificate5 = $certificate5;
-    }  
+    //     $user->certificate5 = $certificate5;
+    // }  
         
       $user->save();
              return redirect()->route('admin.pioneer.index')->with(['message' => 'Record Updated Successfully.', 'message_type' => 'success']);

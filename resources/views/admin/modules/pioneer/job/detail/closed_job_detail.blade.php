@@ -17,7 +17,8 @@
                         <div class="mb-5 pe-5">
                             <h5 class="mb-2 fw-bold">{{$job->title}}</h5>
                             <p class="fz-18 mb-5">
-                                {{$job->description}}
+                                
+                                {!! $job->description !!}
                             </p>
 
                             <h6 class="mb-2 fw-bold">Purposal Submitted by the Applicant </h6>

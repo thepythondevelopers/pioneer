@@ -37,7 +37,7 @@ class InvoiceController extends Controller
                 }else{
                     $t->where('paid',(int)$request->paid);
                 }
-            });
+            })->orderBy('_id', 'DESC');
             
             $vv = view($this->path.'list')
                     ->with('invoice',$invoice->paginate($limit))

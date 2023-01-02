@@ -13,7 +13,7 @@
                         </div>
                         <div class="flex-25">
                             <div class="invoiceAmount">
-                                ${{$i->total_amount}}
+                                {{currency_symbol()}}{{$i->total_amount}}
                             </div>
                         </div>
                         <div class="flex-15">
@@ -42,25 +42,32 @@
                                 <table class="inv_detail" width="99.4%">
                                     <tr>
                                         <th>Description</th>
-                                        <th>Qty</th>
-                                        <th>Amout</th>
+                                        
+                                        <th class="text-center">Hours</th>
+                                        <th class="text-center">Amout</th>
                                     </tr>
                                     @foreach($data as $k=>$d)
                                         <tr>
                                             <td>{{$d->description}}</td>
-                                            <td>{{$d->qty}}</td>
-                                            <td>{{$d->amount}}</td>
+                                            
+                                            <td class="text-center">{{$d->qty}}</td>
+                                            <td class="text-center">{{$d->amount}}</td>
                                         </tr>
                                     @endforeach
+                                    <tr>
+                                        <th class="white-box">Total</th>                                        
+                                        <th  class="white-box text-center">{{currency_symbol()}}{{$i->total_amount}}</th>
+                                        <th  class="white-box"></th>
+                                    </tr>
                                 </table>
                                 </div>
-                                <div class="flex-row">                                
+                                <!-- <div class="flex-row">                                
                                     <div class="flex-60 white-box mt-2 ms-0">
                                         <div class="invoiceJob">Total</div>
                                     </div>
                                 <div class="flex-20 white-box mt-2">
                                     <div class="invoiceJob">${{$i->total_amount}}</div>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
@@ -72,7 +79,7 @@
 @endforeach
 
 @if($count==0)
-            <div class="empty_text"> Data Found.</div>
+            <div class="empty_text">No Data Found.</div>
                 
             @endif
 

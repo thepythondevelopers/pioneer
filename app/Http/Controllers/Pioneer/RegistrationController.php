@@ -30,15 +30,25 @@ class RegistrationController extends Controller
       
       
       $user = Auth::user();
-       
-      $user->first_name = $request->first_name;
+            $user->first_name = $request->first_name;
+      $user->last_name = $request->last_name;
+      $user->mobile_number = (int)$request->mobile_number;
+
+      $user->company = $request->company;
+      $user->address1 = $request->address1;
+        $user->address2 = $request->address2;
+    $user->town_city = $request->town_city;
+    $user->national_insurance_number = $request->national_insurance_number;
+    $user->about_us = $request->about_us; 
+    $user->postcode = $request->postcode;
+      /*$user->first_name = $request->first_name;
       $user->last_name = $request->last_name;
       $user->mobile_number = (int)$request->mobile_number;
       $user->dob = $request->dob;
       $user->address = $request->address;
       //$user->trading = $request->trading;
       $user->title = $request->title;
-      $user->utr_number = $request->utr_number; 
+      $user->utr_number = $request->utr_number; */
 
       if (!empty($request->logo)){
           (isset($user->logo) && $user->logo!='null') ? unlink(public_path($user->logo)) : '';

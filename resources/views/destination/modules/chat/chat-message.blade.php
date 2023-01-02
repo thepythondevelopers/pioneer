@@ -20,7 +20,7 @@
                               <div class="icon-img">
                                 <img src="{{asset('destination/images/icons/hurly-rate.png')}}">
                               </div>
-                              <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} USD/hr</p>
+                              <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} {{currency()}}/hr</p>
                             </li>
                             <li>
                               <div class="icon-img">
@@ -135,7 +135,7 @@
         <div class="modal-body p-5 pb-2 text-center">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <h6 class="mb-3">Specify Budget?</h6>
-          <input class="form-control text-center" name="price" id="price" placeholder="$0" type="text" required>
+          <input class="form-control text-center" name="price" id="price" placeholder="{{currency()}} 0" type="text" required>
           <select name="type" class="form-control">
           <option value="Fixed">Select Job Type</option>
             <option value="Fixed">Fixed</option>

@@ -20,6 +20,65 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{asset('custom/css/loader.css')}}">
+    <style>
+      div#logout .modal-dialog {
+    max-width: 300px;
+    top: 18%;
+}
+
+div#logout .modal-content {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+div#logout .modal-header {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    text-align: center;
+}
+
+div#logout .modal-header img {
+    max-width: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+div#logout .modal-body {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+div#logout .modal-footer {
+    border: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+div#logout .cstm-btn-group {
+    display: inline-flex;
+    align-items: center;
+}
+
+div#logout .modal-footer button,
+div#logout .modal-footer .btn {
+    min-height: auto;
+    max-width: 45%;
+    width: 100%;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    background:#fa006e;
+    border: 0 !important;
+    border-radius: 0;
+    justify-content: center;
+}
+
+    </style>
     @yield('style')
 </head>
 <body>
@@ -45,17 +104,22 @@
  <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="logoutLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="logoutLabel"><span class="icon-img"><img src="{{asset('destination/images/icons/info.png')}}"></span>Alert</h5>
+      <div class="modal-header">
+          <h5 class="modal-title" id="logoutLabel"><span><img src="http://18.209.69.216/pioneer/images/icons/logout_icon.png"></span>
+          </h5>
         </div>
         <div class="modal-body text-center">
-            Are you sure you want
-            to logout?
+          Are you sure you want
+          to logout?
         </div>
         <div class="modal-footer cstm-btn-group ">
+          <button type="button" class="btn form-btn" data-bs-dismiss="modal">No</button>
+          <a href="{{route('logout')}}" class="btn form-btn">Yes</a>
+        </div>
+        <!-- <div class="modal-footer cstm-btn-group ">
           <button type="button" class="outline-btn btn popup-btn" data-bs-dismiss="modal">No</button>
           <a href="{{route('logout')}}" class="edit-btn btn popup-btn">Yes</a>
-        </div>
+        </div> -->
       
       </div>
     </div>

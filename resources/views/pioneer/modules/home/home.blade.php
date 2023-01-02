@@ -97,7 +97,7 @@
                     Advanced Search
                 </a>
                 <!-- <a class ="edit-btn" href="#"><img src="images/icons/job.png">  Advanced Search</a> -->
-                <a class="outline-btn" href="#"><img src="images/icons/job-seeker.png"><span class="job_count">0</span> New Jobs Found</a>
+                <a class="outline-btn" href="{{route('pioneer.home')}}"><img src="images/icons/job-seeker.png"><span class="job_count">0</span> New Jobs Found</a>
 
             </div>
         </div>
@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="col-12">
                         <div class="row">
-                        <div class="form-group col-md-6 mb-xl-6 mb-md-6">
+                        <div class="form-group col-md-4 mb-xl-4 mb-md-4">
                             <div class="input-icon-wrpper">
                                 <input type="text" class="form-control"  name="title" placeholder="Title">
                                 <!-- <span class="input-icon">
@@ -118,16 +118,9 @@
                             </div>
 
                         </div>
-                        <div class="form-group col-md-6 mb-xl-6 mb-md-6">
-                            <div class="input-icon-wrpper">
-                                <input type="text" class="form-control"  name="description" placeholder="Description">
-                                <!-- <span class="input-icon">
-                                    <img src="images/icons/job-description.png" alt="icon">
-                                </span> -->
-                            </div>
-                        </div>
+                        
 
-                        <div class="form-group col-md-6 mb-xl-5 mb-md-5">
+                        <div class="form-group col-md-4 mb-xl-4 mb-md-4">
                             <div class="input-icon-wrpper">
                                 <?php $job_type = getDefaultArray('job_type') ?>
                                 <select  id="jtype" name="job_type" class="form-control">
@@ -145,20 +138,16 @@
                             </div>
 
                         </div>
-                        <div class="form-group col-md-6 mb-xl-6 mb-md-5">
+                        <div class="form-group col-md-4 mb-xl-4 mb-md-5">
                             <div class="input-icon-wrpper">
-                                <select name="location" id="Location" class="form-control">
-                                    <option value="">Location</option>
-                                    @foreach($location as $key=>$l)
-                                        <option value="{{$l->name}}">{{$l->name}}</option>
-                                    @endforeach
-                                </select>
+                                        <input type="text" class="form-control"  name="location" placeholder="Location">
+                                
                                 <!-- <span class="input-icon">
                                     <img src="images/icons/location.png" alt="icon">
                                 </span> -->
-                                <span class="input-icon pioneer-chevron">
+                                <!-- <span class="input-icon pioneer-chevron">
                                     <img src="images/icons/arrow-down.png" alt="icon">
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                         </div>

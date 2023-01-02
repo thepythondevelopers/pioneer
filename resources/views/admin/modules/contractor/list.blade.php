@@ -14,8 +14,10 @@
             <td>{{$j->hire_user->first_name}}</td>
             <td>
                 <ul class="action-btn-list">
-                    <li data-toggle="tooltip" data-placement="top" title="Escrow"><a href="{{route('admin.contractor.escrow',$j->_id)}}" class="icon-btn"><i class="far fa-eye"></i></a></li>
-                    <li data-toggle="tooltip" data-placement="top" title="Invoices"><a href="{{route('admin.contractor.invoice',$j->_id)}}" class="icon-btn"><i class="fas fa-briefcase"></i></a></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Escrow"><a href="{{route('admin.contractor.escrow',$j->_id)}}" class="icon-btn">
+                    <i class="fas fa-money-bill-wave"></i></a></li>
+                    <li data-toggle="tooltip" data-placement="top" title="Invoices"><a href="{{route('admin.contractor.invoice',$j->_id)}}" class="icon-btn">
+                     <i class="fas fa-briefcase"></i></a></li>
                  </ul>
             </td>
    		</tr>

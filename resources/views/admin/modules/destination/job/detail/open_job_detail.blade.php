@@ -51,7 +51,7 @@
                         <div class="job-detail-title fz-16 fw-bold">
                                 Houly Rate
                             </div>
-                            <p class="fz-14">{{$job->hour_rate}} Usd/Hr</p>
+                            <p class="fz-14">{{$job->hour_rate}} {{currency()}}/Hr</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 col-sm-6">
@@ -115,7 +115,7 @@
                         <div class="job-detail-title fz-16 fw-bold">
                                 Job Description
                             </div>
-                            <p class="fz-14">{{$job->description}}</p>
+                            <p class="fz-14">{!! $job->description !!}</p>
                         </div>
                     </div>
                 </div>

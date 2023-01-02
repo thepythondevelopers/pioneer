@@ -8,7 +8,7 @@
   <input type="hidden" id="f_job_id" value="{{$job_id}}">
   <!-- Start chat sec -->
   <div class="chat-sec-wrap">
-    <div class="container container-1440">
+    <div class="container-fluid p-0">
       <div class="messaging">
         <div class="inbox_msg shadow">
           

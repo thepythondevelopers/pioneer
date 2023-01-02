@@ -62,10 +62,25 @@ class SettingController extends Controller
       $user->first_name = $request->first_name;
       $user->last_name = $request->last_name;
       $user->mobile_number = (int)$request->mobile_number;
+      $user->company = $request->company;
+    $user->website_address = $request->website_address;
+    $user->address1 = $request->address1;
+    $user->main_contact_name = $request->main_contact_name;
+    $user->address2 = $request->address2;
+    $user->town_city = $request->town_city;
+    $user->finance_name = $request->finance_name;
+    $user->country = $request->country;
+    $user->finance_email = $request->finance_email;
+    $user->postcode = $request->postcode;
+    $user->about_us = $request->about_us;
+
+
+
+      /*$user->mobile_number = (int)$request->mobile_number;
       $user->company_name = $request->company_name;
       $user->vat_number = (int)$request->vat_number;
       $user->trading = $request->trading;
-      $user->address = $request->address;        
+      $user->address = $request->address;*/        
 
       if (!empty($request->logo)){
           (isset($user->logo) && $user->logo!='null') ? (file_exists(public_path($user->logo)) ? unlink(public_path($user->logo)) : '') : '';
@@ -124,11 +139,11 @@ class SettingController extends Controller
 
       
     
-    $user->title = $request->title;
+    /*$user->title = $request->title;
         $user->position = $request->position;
         $user->website = $request->website;
         $user->billing_address = $request->billing_address;
-        $user->company_number = $request->company_number;
+        $user->company_number = $request->company_number;*/
 
       
         

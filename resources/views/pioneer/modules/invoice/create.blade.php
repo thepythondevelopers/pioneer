@@ -19,6 +19,7 @@
                     <div class="row">
 
                         <div class="form-group  col-md-12 mb-xl-5 mb-md-4 mb-3">
+                            <label class="label">Type</label>
                                 <select name="type" id="jtype" class="form-control">
                                     <option value="Fixed">Fixed</option>
                                     <option value="Hourly">Hourly</option>
@@ -27,13 +28,16 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3">
-                            <input type="text" class="form-control"  placeholder="Description" name="description[]" >
+                            <label class="label">Role</label>
+                            <input type="text" class="form-control"  placeholder="Role" name="description[]" >
                         </div>
                         <div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3">
-                            <input type="number" class="form-control"  placeholder="Qty" name="qty[]" >
+                            <label class="label">Hours Work</label>
+                            <input type="number" class="form-control qty hour_field"  placeholder="Hours Work" name="qty[]" disabled>
                         </div>
                         <div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3">
-                            <input type="text" class="form-control amount"  placeholder="Amount" name="amount[]" >
+                            <label class="label">Rate</label>
+                            <input type="text" class="form-control amount"  placeholder="Rate" name="amount[]" >
                         </div>
 
                     </div>
@@ -71,30 +75,76 @@ $(document).on("keypress", ".amount", function() {
         }
         return /\d/.test(String.fromCharCode(event.keyCode));
     });    
-$(document).on("input", ".amount", function() {    
+$(document).on("input", ".amount,.qty", function() {    
     $t = 0;
-    $(".amount").each(function() {
-        $t += $(this).val()=='' ? 0 : parseInt($(this).val());
-    });
-    $("#total_amount").text($t);
-    $("#h_total_amount").val($t);
-    
+    type = $("#jtype").val();
+    if(type=='Fixed'){
+        $(".amount").each(function() {
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val());
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }else{
+        $(".amount").each(function() {
+            qty = $(this).parent().parent().find('.qty').val()=='' ? 1 : $(this).parent().parent().find('.qty').val();
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val())*parseInt(qty);
+
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }
 });
 
 $(document).on("click", ".remove", function() {    
     $t = 0;
-    $(".amount").each(function() {
-        $t += $(this).val()=='' ? 0 : parseInt($(this).val());
-    });
-    $("#total_amount").text($t);
-    $("#h_total_amount").val($t);
+    type = $("#jtype").val();
+    if(type=='Fixed'){
+        $(".amount").each(function() {
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val());
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }else{
+        $(".amount").each(function() {
+            qty = $(this).parent().parent().find('.qty').val()=='' ? 1 : $(this).parent().parent().find('.qty').val();
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val())*parseInt(qty);
+
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }
     
+});
+
+$('#jtype').on('change', function() {
+  $t = 0;
+    type = $("#jtype").val();
+    if(type=='Fixed'){
+        $(".hour_field").val('');
+        $(".hour_field").attr('disabled','disabled');
+        $(".amount").each(function() {
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val());
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }else{
+        $(".hour_field").removeAttr('disabled');
+        $(".amount").each(function() {
+            qty = $(this).parent().parent().find('.qty').val()=='' ? 1 : $(this).parent().parent().find('.qty').val();
+            $t += $(this).val()=='' ? 0 : parseInt($(this).val())*parseInt(qty);
+
+        });
+        $("#total_amount").text($t);
+        $("#h_total_amount").val($t);
+    }
 });
 function addrow(){
         
         r = Math.random();
-        $("#description_item").append('<div class="row"><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="text" class="form-control"  placeholder="Description" name="description['+r+']" required=""></div><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="number" class="form-control"  placeholder="Qty" name="qty['+r+']" required></div><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="text" class="form-control amount"  placeholder="Amount" name="amount['+r+']" required><input type="button" class="remove btn btn-primary" value="Remove" onclick="$(this).parent().parent().remove();"></div></div>');
-
+        $("#description_item").append('<div class="row"><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="text" class="form-control"  placeholder="Role" name="description['+r+']" required=""></div><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="number" class="form-control qty hour_field"  placeholder="Hours Work" name="qty['+r+']" required></div><div class="form-group col-md-4 mb-xl-5 mb-md-4 mb-3"><input type="text" class="form-control amount"  placeholder="Rate" name="amount['+r+']" required><input type="button" class="remove btn btn-primary" value="Remove" onclick="$(this).parent().parent().remove();"></div></div>');
+        if($("#jtype").val()=='Fixed'){
+            $(".hour_field").attr('disabled','disabled');
+        }
     }    
 
 

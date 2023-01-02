@@ -4,27 +4,16 @@
 
 @section('content')
 <!-- job-history-section -->
-
+<section class="inner-banner bg">
+        <div class="container container-1440 innercontent_wrp">
+            <h2>Job Overview</h2>
+        </div>
+    </section>
     <section class="job-history-section p-60">
         <div class="container container-1440">
-            <div class="heading-wrapper text-uppercase mb-md-0 mb-5">
-                <h4 class="heading after-line grey-line">Job Overview</h4>
-            </div>
-
             <div class="job-history-card job-detail-card shadow br-10 p-md-5 p-4 border-radius">
                 <div class="row flex-lg-row flex-column-reverse">
-                    <div class="col-xl-9 col-lg-8">
-                        <div class="mb-5 pe-5">
-                            <h5 class="mb-2 fw-bold">{{$job->title}}</h5>
-                            <p class="fz-18 mb-5">
-                                {{$job->description}}
-                            </p>
-
-                            <h6 class="mb-2 fw-bold">Purposal Submitted by the Applicant </h6>
-                            <p class="fz-18">{{$job->pioneer_applicant_user->proposal}}</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4">
+                <div class="col-xl-3 col-sm-4">
                         <div class="profile-picture-img shadow  br-10 ">
                             <img src="{{$job->created_user->logo!=null ? asset($job->created_user->logo) : asset('images/Resgister-step/company.png')}}" class=" br-10" alt="destination-img">
                             <figure class="shadow applicant-icon">
@@ -36,6 +25,22 @@
                         </div>
                         
                     </div>
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="mb-5">
+                            <h5 class="mb-2 fw-bold">{{$job->title}}</h5>
+                            <p class="fz-18 mb-5">
+                                {!! $job->description !!}
+                                
+                            </p>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-12">
+                            <h6 class="mb-2 fw-bold">Purposal Submitted by the Applicant </h6>
+                            <p class="fz-18">{{$job->pioneer_applicant_user->proposal}}</p>
+                    </div>
+                   
                 </div>
                 <div class="row">
                     <div class=" col-md-4 col-sm-6">

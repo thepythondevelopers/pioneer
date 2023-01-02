@@ -7,42 +7,63 @@
     
 
     <!-- job-history-section -->
-
+    <section class="inner-banner bg">
+        <div class="container container-1440 innercontent_wrp">
+            <h2>Job Overview</h2>
+        </div>
+    </section>
         <section class="job-history-section p-60">
             <div class="container container-1440">
-                <div class="heading-wrapper text-uppercase mb-md-0 mb-5">
-                    <h4 class="heading after-line grey-line">Job Overview</h4>
-                </div>
+           
 
                 <div class="job-history-card job-detail-card shadow br-10 p-md-5 p-4 border-radius">
                     <div class="row">
-                        <div class=" col-lg-9">
-                            <div class="mb-5 pe-sm-5 ">
-                                <h5 class="mb-2 fw-bold">{{$j->title}}</h5>
-                                <p class="fz-18 mb-5 more_less">
-                                    {{$j->description}}
-                                </p>
-
-                                <h6 class="mb-2 fw-bold">Purposal Submitted by the Applicant </h6>
-                                <p class="fz-18 more_less">
-                                    {{$j->hire_user_applicant->proposal}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class=" col-lg-3 mb-4">
+                    <div class=" col-lg-3 mb-4">
                             <div class="profile-picture-img shadow  br-10 ">
-                                <img src="{{url($j->hire_user->logo)}}" class=" br-10" alt="destination-img">
+                                <img src="{{$j->hire_user!=null ? url($j->hire_user->logo) : url('icon_black.png')}}" class=" br-10" alt="destination-img">
                                 <figure class="shadow applicant-icon">
                                 <img src="{{asset('destination/images/icons/company.png')}}" alt="icon">
                             </figure>
                             </div>
                             <div class="applicant-name h6 fw-bold  my-3">
-                                {{$j->hire_user->first_name}}
+                                {{$j->hire_user!=null ? $j->hire_user->first_name : ''}}
                             </div>
+                            @if($j->hire_user!=null)
                             <div class="job-card-btn text-center">
                                 <a href="{{route('destination.chat.param',[$j->_id,$j->hire_person])}}" class="edit-btn btn popup-btn">Message</a>
                             </div>
+                            @endif
                         </div>
+
+                        <div class=" col-lg-9">
+                            <div class="mb-5">
+                                <h5 class="mb-2 fw-bold">{{$j->title}}</h5>
+                                <p class="fz-18 mb-5 more_less">
+                                    
+                                    {!! $j->description !!}
+                                </p>
+                            </div>
+                        </div>
+                        @if($j->hire_person!=0)
+                        <div class="col-12">
+                            <div class="mb-5">
+                            <h6 class="mb-2 fw-bold">Purposal Submitted by the Applicant </h6>
+                                <p class="fz-18 more_less">
+                                    {{$j->hire_user_applicant->proposal}}
+                                </p>
+                                </div>
+                        </div>
+                        @else
+                        <div class="col-12">
+                            <div class="mb-5">
+                            <h6 class="mb-2 fw-bold">Job </h6>
+                                <p class="fz-18 more_less">
+                                    Suspended
+                                </p>
+                                </div>
+                        </div>
+                        @endif
+                       
                     </div>
                     <div class="row">
                         <div class=" col-md-4 col-sm-6">
@@ -154,7 +175,7 @@
                         </div>
                        
                     </div>
-
+                    @if($j->hire_person!=0)
                     <div class="row mt-5">
                         <div class="col-md-6">
                         <h6>Destination</h6>
@@ -178,10 +199,7 @@
                                 <p>Rating is not submitted yet.</p>
                                 @endif
 
-                                <!-- <h6 class="mb-2 fw-bold">Dispute (Me)</h6>
-                                <p class="fz-18 mt-3 mb-4">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged <a href="#" class="more-link">more...</a>
-                                </p> -->
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -215,8 +233,7 @@
 
                         <textarea placeholder="Comment here" class="form-control mt-4 br-10" rows="4" name="comment"></textarea>
                         <div class="btn-group mt-4">
-                            <!-- <a href="javascript:void(0)" class="edit-btn btn popup-btn"
-                            >Submit Rating</a> -->
+
                             <button type="submit" class="edit-btn btn popup-btn">Submit Rating</button>
                         </div>
                         </div>
@@ -233,6 +250,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
 
             </div>

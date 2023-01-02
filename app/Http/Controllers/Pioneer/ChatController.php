@@ -58,7 +58,8 @@ class ChatController extends Controller
 
     public function user_list(Request $request){
         $search = $request->search;
-            $applicant_id = Applicant::where('submit_by',Auth::user()->_id)->where('interested',1)->pluck('_id')->toArray();
+            /*$applicant_id = Applicant::where('submit_by',Auth::user()->_id)->where('interested',1)->pluck('_id')->toArray();*/
+            $applicant_id = Applicant::where('submit_by',Auth::user()->_id)->pluck('_id')->toArray();
             $chat_list = Chat::whereIn('applicant_id',$applicant_id)->whereHas('sendBy_user', function ($query) use ($search) {
     $query->when($search, function ($query) use ($search) {                
                             $query->where('first_name','LIKE','%'.$search.'%');

@@ -14,7 +14,7 @@
         <div class="container container-1440">
             <div class="invoice_tab flex-row mt-3 mb-2">
                 <div class="invoice_tabItem flex-60">
-                    Describtion
+                    Description
                 </div>
                 <div class="invoice_tabItem flex-25">
                     Amount
@@ -41,7 +41,7 @@
                     </div>
                     <div class="flex-25">
                         <div class="invoiceAmount">
-                            ${{$p->escrow_amount}}
+                            {{currency_symbol()}}{{$p->escrow_amount}}
                         </div>
                     </div>
                     <div class="flex-15">

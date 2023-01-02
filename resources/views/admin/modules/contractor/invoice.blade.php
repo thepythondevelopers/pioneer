@@ -72,14 +72,14 @@
                                 <table class="inv_detail" width="99.4%">
                                     <tr>
                                         <th>Description</th>
-                                        <th>Qty</th>
                                         <th>Amout</th>
+                                        <th>Hours</th>
                                     </tr>
                                     @foreach($data as $k=>$d)
                                         <tr>
                                             <td>{{$d->description}}</td>
-                                            <td>{{$d->qty}}</td>
                                             <td>{{$d->amount}}</td>
+                                            <td>{{$d->qty}}</td>
                                         </tr>
                                     @endforeach
                                 </table>
@@ -89,7 +89,7 @@
 										<div class="invoiceJob">Total</div>
 									</div>
                                 <div class="flex-20 white-box mt-2">
-                                    <div class="invoiceJob">${{$i->total_amount}}</div>
+                                    <div class="invoiceJob">{{currency_symbol()}}{{$i->total_amount}}</div>
                                 </div>
 <!--                                 <div class="flex-20  flex-grow white-box mt-2">
                                     <div class="invoiceJob">$100</div>

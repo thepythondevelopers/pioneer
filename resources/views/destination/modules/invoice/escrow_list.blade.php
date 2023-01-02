@@ -37,7 +37,7 @@
 @endforeach
 
 @if($count==0)
-            <div class="empty_text"> Data Found.</div>
+            <div class="empty_text">No Data Found.</div>
                 
             @endif
 

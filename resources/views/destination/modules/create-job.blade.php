@@ -106,7 +106,15 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
+#remain {
+    color: red;
+    float: left;
+    margin-right: 8px;
+}
+.words-count {
+    display: inline-block;
+    margin-top: 10px;
+}
 </style>
 @endsection
 @section('content')
@@ -125,13 +133,14 @@
                     @csrf
                     <div class="row">
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
-                         
-                                <input type="text" class="form-control" id="jtitle" placeholder="Job Title" name="title" >
+                        <label class="label">Job Title</label>
+                            <input type="text" class="form-control" id="jtitle" placeholder="Job Title" name="title" >
                       
                             
                         </div>
 
                         <div class="form-group  col-md-6 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Job Type</label>
                                 <?php $job_type = getDefaultArray('job_type') ?>
                                 <select name="job_type" id="jtype" class="form-control">
                                     <option value="">Job Type</option>
@@ -142,27 +151,33 @@
                         </div>
 
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
-                                <input type="text" class="form-control" name="value_from_start_date" placeholder="Start Date" data-datepicker="separateRange"/>                           
+                        <label class="label">Start Date</label>
+                    <input type="text" class="form-control" name="value_from_start_date" autocomplete="off" placeholder="Start Date" data-datepicker="separateRange"/>                           
                         </div>
 
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
-                                <input type="text" name="value_from_end_date" class="form-control" placeholder="End Date" data-datepicker="separateRange"/>
+                        <label class="label">End Date</label>
+                                <input type="text" name="value_from_end_date" class="form-control" autocomplete="off" placeholder="End Date" data-datepicker="separateRange"/>
                         </div>
 
                         <div class="form-group col-12 mb-xl-5 mb-md-4 mb-3">
-                                <input  class="form-control"  placeholder="Address Line 1" name="address">                                             
+                        <label class="label">Address</label>
+                                <input  class="form-control"  placeholder="Address" name="address">                                             
                         </div>                    
                         
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
-                            <select name="location" id="Location" class="form-control">
+                            <!-- <select name="location" id="Location" class="form-control">
                                 <option value="">Location</option>
                                 @foreach($location as $key=>$loc)
                                     <option value="{{$loc->name}}">{{$loc->name}}</option>
                                 @endforeach
-                            </select>
+                            </select> -->
+                            <label class="label">Location</label>
+                            <input type="text" name="location" id="Location"  class="form-control" placeholder="Location" />
                         </div>  
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
-                            <input type="text" name="hour_rate" id="hour_rate" maxlength="5" class="form-control" placeholder="Hour Rate" />
+                        <label class="label">Hour Rate</label>
+                            <input type="text" name="hour_rate" id="hour_rate" maxlength="5" class="form-control" autocomplete="off" placeholder="Hour Rate" />
                         </div>
                         <!-- <div class="form-group  col-md-12 mb-xl-5 mb-md-4 mb-3">
                             <div class="input-icon-wrpper">
@@ -177,32 +192,42 @@
                         </div> --> 
                         <div class="form-group  col-md-6 mb-xl-5 mb-md-4 mb-3">
                             <div class=" timepicker-wrapper " >
-                                <input type="text" class="form-control" name="shift_start_time" id="time_start" autocomplete="off" placeholder="Shift Start Time">
+                                <label class="label">Shift Start Time</label>
+                                <input type="text" class="form-control" name="shift_start_time" id="time_start" autocomplete="off"autocomplete="off" placeholder="Shift Start Time" value="1:00 PM">
                            </div>  
                         </div>
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
                             <div class="timepicker-wrapper" >
-                                <input type="text" class="form-control" id="time_end" name="shift_end_time" placeholder="Shift End Time">
-                         
+                            <label class="label">Shift End Time</label>
+                                <input type="text" class="form-control" id="time_end" name="shift_end_time" autocomplete="off" placeholder="Shift End Time" value="5:00 PM">
                             </div> 
                         </div>
 
                         <div class="form-group col-12 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Job Description</label>
                                 <textarea  class="form-control textarea"  placeholder="Job Description" name="description" ></textarea>
+                                <!-- <div class="words-count">
+                                    <p id="remain">1500</p> characters remaining
+                                </div> -->
                         </div>
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Job Duration</label>
                                 <select name="duration" id="jduration" class="form-control">
                                     <option value="Daily">Daily</option>
                                     <option value="Weekly">Weekly</option>
                                   </select>
                         </div>
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Contact Person Name</label>
                             <input type="text" class="form-control" id="cpname" placeholder="Contact Person Name" name="person_name" >
                          </div>
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Contact Person Email Id</label>
                             <input type="email" class="form-control" id="cpemial" placeholder="Contact Person Email Id" name="contact_email" >
                         </div>
                         <div class="form-group col-md-6 mb-xl-5 mb-md-4 mb-3">
+                        <label class="label">Contact Person Phone Number</label>
+
                             <div class=" input_number">
                                 <input type="text" class="form-control code-span" id="contact_number" maxlength="10" placeholder="Contact Person Phone Number" name="contact_number" pattern="[1-9]{1}[0-9]{9}">
                                 <span class="tel-country-code-l">+44</span>
@@ -232,13 +257,18 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+ <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>   
     <script type="text/javascript">
-        var maxchars = 1500;
+        CKEDITOR.replace( 'description' );
+
+        /*var maxchars = 1500;
   $('textarea').keyup(function () {
     var tlength = $(this).val().length;
     $(this).val($(this).val().substring(0, maxchars));
-    
-});
+    var tlength = $(this).val().length;
+    remain = maxchars - parseInt(tlength);
+    $('#remain').text(remain);
+});*/
 
 $("#hour_rate").keypress(function(event) {
         return /\d/.test(String.fromCharCode(event.keyCode));
@@ -266,7 +296,7 @@ $("#contact_number").keypress(function(event) {
         'description':{
             required: true,
             nowhitespace: true,
-            maxlength:500
+            maxlength:1500
         },
         'address':{
             required: true,
@@ -371,7 +401,7 @@ $("#contact_number").keypress(function(event) {
 
 
 
-$('#time_end').prop('disabled', true);
+//$('#time_end').prop('disabled', true);
 $('#time_start').datetimepicker({
   format: 'LT',
   useCurrent: false,
@@ -411,6 +441,13 @@ $("#time_start").on("dp.change", function (e) {
   }
   
   $('#time_end').data("DateTimePicker").minDate(e.date);
+});
+
+$( document ).ready(function() {
+    const d = new Date();
+d.setHours(13);
+d.setMinutes(00);
+   $('#time_end').data("DateTimePicker").minDate(d);
 });
 
 /*   var $begin = $('#time_start');

@@ -1,3 +1,4 @@
+
 @foreach($invoice as $key=>$i)
 @php $data = json_decode($i->data); @endphp
                 <div class="invoice-card">
@@ -13,7 +14,7 @@
                         </div>
                         <div class="flex-25">
                             <div class="invoiceAmount">
-                                ${{$i->total_amount}}
+                                {{currency_symbol()}}{{$i->total_amount}}
                             </div>
                         </div>
                         <div class="flex-15">
@@ -42,7 +43,7 @@
                                 <table class="inv_detail" width="99.4%">
                                     <tr>
                                         <th>Description</th>
-                                        <th>Qty</th>
+                                        <th>Hours</th>
                                         <th>Amout</th>
                                     </tr>
                                     @foreach($data as $k=>$d)
@@ -59,7 +60,7 @@
                                         <div class="invoiceJob">Total</div>
                                     </div>
                                 <div class="flex-20 white-box mt-2">
-                                    <div class="invoiceJob">${{$i->total_amount}}</div>
+                                    <div class="invoiceJob">{{currency_symbol()}}{{$i->total_amount}}</div>
                                 </div>
 
                             </div>
@@ -72,9 +73,8 @@
 @endforeach
 
 @if($count==0)
-            <tr>
-                    <td colspan="3">No Data Found.</td>
-            </tr>       
+            <label class="text-center py-5 w-100">No Data Found.</label>
+           
             @endif
 
 <?=listing($count,$invoice->currentPage(),$list) ?>

@@ -17,6 +17,7 @@ use App\User;
 use App\Mail\Destination\PioneerRating;
 use App\Mail\Destination\JobClosed;
 use App\Mail\Destination\ProposalAccepted;
+use App\Mail\Destination\ProposalRejected;
 use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
@@ -76,6 +77,20 @@ class JobController extends Controller
         abort(404);
     }
 
+    public function suspend_job($id){
+        $job = Job::where('_id',$id)->where('created_by',Auth::user()->_id)->where('hire_status',0);        
+        if($job->count()>0){
+            $job= $job->first();
+            $job->hire_status = 1;
+            $job->hire_type = '';
+            $job->hire_person = 0;
+            $job->close_job =1;
+            $job->save();
+            return redirect()->route('destination.jobs')->with(['message' => 'Job Suspended Successfully.', 'message_type' => 'success']);
+        }
+        abort(404);
+    }
+
     public function job_applicant($id){
 
         $applicant = Applicant::where('job_id',$id)->paginate(6);
@@ -112,6 +127,33 @@ class JobController extends Controller
            'status' => 1,
            'route' => route('destination.chat.param',[$request->job_id,$request->applicant_id])
         ]);
+        
+    }
+
+
+    public function reject_applicant(Request $request){
+
+        $app = Applicant::where('job_id',$request->job_id)->where('submit_by',$request->applicant_id)->first();
+
+        $app->interested = 2;
+        $app->save();
+
+        $job = Job::where('_id',$request->job_id)->first();
+        $submit_user = User::where('_id',$app->submit_by)->first();
+        $n = new Notification();
+        $n->message = "New Message";
+        $n->type = "Proposal Rejected";
+        $n->to = $app->submit_by;
+        $n->by = Auth::user()->_id;
+        $n->read_status = 0;
+        $n->applicant_id = $app->_id;
+        $n->job_id = $app->job_id;
+        $n->save();
+
+        Mail::to($submit_user->email)->send(new ProposalRejected($submit_user,$job));
+
+        
+        return redirect()->route('destination.proposal',[$request->job_id,$app->_id])->with(['message' => 'Application Rejected.', 'message_type' => 'success','notification' =>"send"]);
         
     }
 
@@ -256,7 +298,7 @@ class JobController extends Controller
             $n->read_status = 0;
             $n->save();   
             Mail::to($job->hire_user->email)->send(new PioneerRating($job->hire_user,$job));
-            return redirect()->route('destination.job.closed.detail',$id)->with(['message' => 'Rating Submitted Successfully.', 'message_type' => 'success']); 
+            return redirect()->route('destination.job.closed.detail',$id)->with(['message' => 'Rating Submitted Successfully.', 'message_type' => 'success','notification' =>"send"]); 
         }else{
               return redirect()->route('destination.job.closed.detail',$id); 
         }
@@ -271,6 +313,15 @@ class JobController extends Controller
             $amount_spent = Invoice::where('job_id',$id)->where('paid',1)->sum('total_amount');
             $amount_pending = Invoice::where('job_id',$id)->where('paid',0)->sum('total_amount');
             return view($this->path.'job_detail.job_spending_detail')->with('job',$job)->with('invoice',$invoice)->with('escrow',$escrow)->with('amount_spent',$amount_spent)->with('amount_pending',$amount_pending);
+        }else{
+            abort(404);
+        }
+    }
+
+    public function applicant_profile($id){
+        $user = User::where('_id',$id);
+        if($user->count()>0){
+            return view($this->path.'job.profile')->with('user',$user->first());
         }else{
             abort(404);
         }

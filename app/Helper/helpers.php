@@ -160,6 +160,10 @@ function pioneer_notification($n){
             $route = route('pioneer.chat.param',[$n->job_id,$n->by]);
             $a='<p class="pe-3">Chat is initiated by '.$n->sendByUser->first_name.' on Job - '.$n->job->title.' <a href="'.$route.'">Click Here</a></p>';
             break;
+            case 'Proposal Rejected':
+            $route = route('pioneer.proposal',[$n->job_id]);
+            $a='<p class="pe-3">Proposal is rejected by '.$n->sendByUser->first_name.' on Job - '.$n->job->title.' <a href="'.$route.'">Click Here</a></p>';
+            break;
         case 'Hire':
             $route = route('pioneer.hire.job.detail',[$n->job_id]);
             $a='<p class="pe-3">Congratulations, you are hire for the job '.$n->job->title.' <a href="'.$route.'">Click Here</a></p>';
@@ -333,4 +337,12 @@ function show_rating($r){
         }
         return $html;
     
+}
+
+function currency(){
+    return 'GBP'; 
+}
+
+function currency_symbol(){
+    return '£'; 
 }

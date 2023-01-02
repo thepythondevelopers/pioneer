@@ -81,6 +81,7 @@
 
                                             <div class="row form-design">
                                                 <div class="form-group col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">First Name</label>
                                                     <div class="input-icon-wrpper">
                                                         <input  type="text" class="form-control" id="first_name" placeholder="First Name"
                                                 name="first_name" value="{{$user->first_name}}" disabled>
@@ -88,54 +89,87 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group  col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Company</label>
                                                     <div class="input-icon-wrpper">
-                                                        <input  type="text" class="form-control" id="last_name" placeholder="Last Name"
+                                                        <input  type="text" class="form-control" id="company" placeholder="Company"
+                                                name="company" value="{{$user->company}}" disabled>
+                                               
+                                                    </div>
+                                                </div>
+                                                <div class="form-group  col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Surname</label>
+                                                    <div class="input-icon-wrpper">
+                                                        <input  type="text" class="form-control" id="last_name" placeholder="Sur Name"
                                                 name="last_name" value="{{$user->last_name}}" disabled>
                                                
                                                     </div>
                                                 </div>
-                                               
-                                                <div class="form-group col-md-6 mb-lg-4 mb-3">
+                                                <div class="form-group  col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Address1</label>
                                                     <div class="input-icon-wrpper">
-                                                        <input type="text" class="form-control" id="mobile_number" maxlength="10" placeholder="Mobile Number"
-                                                name="mobile_number" value="{{(isset($user->mobile_number) && $user->mobile_number!='null') ? $user->mobile_number : ''}}" disabled>
-                                                <span class="tel-country-code">+44</span>
-                                                  
+                                                        <input  type="text" class="form-control" id="address1" placeholder="Address1"
+                                                name="address1" value="{{$user->address1}}" disabled>
+                                               
                                                     </div>
                                                 </div>
-                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="date"  onclick="this.showPicker()" class="form-control" id="cname" max="<?php echo date("Y-m-d"); ?>" placeholder="Date of Birth"
-                                                name="dob" value="{{(isset($user->dob) && $user->dob!='null') ? $user->dob : ''}}" disabled>
-                                          
-                                            </div>
-                                        </div>
-                                                <div class="form-group col-12 mb-lg-4 mb-3">
+                                               <div class="form-group col-6 mb-lg-4 mb-3">
+                                                <label class="label">Email</label>
                                                     <div class="input-icon-wrpper">
                                                         <input  type="text" class="form-control" id="email" placeholder="Email Id"
                                                 name="email" value="{{$user->email}}" disabled>
                                                 
                                                     </div>
                                                 </div>
-                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text"  class="form-control" id="title"  placeholder="Title"
-                                                name="title" value="{{(isset($user->title) && $user->title!='null') ? $user->title : ''}}" disabled>
-                                            </div>
-                                        </div>
+                                                <div class="form-group  col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Address2</label>
+                                                    <div class="input-icon-wrpper">
+                                                        <input  type="text" class="form-control" id="address2" placeholder="Address2"
+                                                name="address2" value="{{$user->address2}}" disabled>
+                                               
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Mobile Number</label>
+                                                    <div class="input-icon-wrpper">
+                                                        <input type="text" class="form-control" id="mobile_number" maxlength="10" placeholder="Mobile Number"
+                                                name="mobile_number" value="{{(isset($user->mobile_number) && $user->mobile_number!='null') ? $user->mobile_number : ''}}" disabled>
+                                                <span class="tel-country-code" style="top:17px">+44</span>
+                                                  
+                                                    </div>
+                                                </div>
+                                                <div class="form-group  col-md-6 mb-lg-4 mb-3">
+                                                    <label class="label">Town/City</label>
+                                                    <div class="input-icon-wrpper">
+                                                        <input  type="text" class="form-control" id="town_city" placeholder="Town/City"
+                                                name="town_city" value="{{$user->town_city}}" disabled>
+                                               
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                
                                         <div class="form-group col-6 mb-lg-4 mb-3">
+                                            <label class="label">National Insurance number</label>
                                             <div class="input-icon-wrpper">
-                                                <input type="text"  class="form-control" id="utr_number"  placeholder="UTR Number"
-                                                name="utr_number" value="{{(isset($user->utr_number) && $user->utr_number!='null') ? $user->utr_number : ''}}" disabled>
+                                                <input type="text"  class="form-control" id="national_insurance_number"  placeholder="National Insurance number"
+                                                name="national_insurance_number" value="{{(isset($user->national_insurance_number) && $user->national_insurance_number!='null') ? $user->national_insurance_number : ''}}" disabled>
                                             </div>
                                         </div>
+                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Postcode</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="postcode"  placeholder="Postcode"
+                                                name="postcode" value="{{(isset($user->postcode) && $user->postcode!='null') ? $user->postcode : ''}}" disabled>
+                                                    </div>
+                                                </div>
                                                
                                             </div>
                                                                                  
                                         </div>
                                         <div class="form-group icon-form col-12 mb-lg-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <textarea class="form-control " rows="16" placeholder="Address" disabled>{{(isset($user->address) && $user->address!='null') ? Auth::user()->address : '' }}</textarea>
+                                        <label class="label">About you/CV</label>
+                                            <div class="input-icon-wrpper1">
+                                                <textarea class="form-control " rows="8" placeholder="About Us" name="about_us" >{{(isset($user->about_us) && $user->about_us!='null') ? Auth::user()->about_us : '' }}</textarea>
                                             
                                             </div>
                                         </div>
@@ -151,7 +185,7 @@
                                                     <div class="col-md-3 col-sm-6">
                                                         <div class="certificate-box">
                                                             
-                                                            <div class=" fz-16"><p>Driving Licence</p></div>
+                                                            <div class=" fz-16"><p>CV</p></div>
                                                              <div class="box">
                                                     <div class="js--image-preview certificate1-preview1" style="background-image:url('{{(isset($user->certificate1) && $user->certificate1!='null') ? asset(Auth::user()->certificate1) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(1)" style="display:none"><i class="fas fa-times"></i></a>
@@ -170,7 +204,7 @@
                                                     </div>
                                                     <div class="col-md-3 col-sm-6">
                                                     <div class="certificate-box">
-                                                            <div class="fz-16"><p>Insurance Certificate</p></div>
+                                                            <div class="fz-16"><p>Right to work ID</p></div>
                                                              <div class="box">
                                                     <div class="js--image-preview certificate1-preview2" style="background-image:url('{{(isset($user->certificate2) && $user->certificate2!='null') ? asset(Auth::user()->certificate2) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(2)" style="display:none"><i class="fas fa-times"></i></a>
@@ -188,7 +222,7 @@
                                                     <div class="col-md-3 col-sm-6">
                                                      
                                                     <div class="certificate-box"> 
-                                                            <div class=" fz-16"><p>Public Liability Certificate</p></div>
+                                                            <div class=" fz-16"><p>DBS Certificate</p></div>
                                                             <div class="box">
                                                     <div class="js--image-preview certificate1-preview3" style="background-image:url('{{(isset($user->certificate3) && $user->certificate3!='null') ? asset(Auth::user()->certificate3) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(3)" style="display:none"><i class="fas fa-times"></i></a>
@@ -205,7 +239,7 @@
                                                     </div>
                                                     <div class="col-md-3 col-sm-6">
                                                     <div class="certificate-box">    
-                                                        <div class=" fz-16"><p>DBS Certificate</p></div>
+                                                        <div class=" fz-16"><p>Security Clearance</p></div>
                                                            <div class="box">
                                                     <div class="js--image-preview certificate1-preview4" style="background-image:url('{{(isset($user->certificate4) && $user->certificate4!='null') ? asset(Auth::user()->certificate4) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(4)" style="display:none"><i class="fas fa-times"></i></a>
@@ -221,7 +255,7 @@
                                                   <div id="certificate4-error" class="cstm-error-image-div"></div>
                                                        
                                                     </div>
-                                                     <div class="col-md-3 col-sm-6">
+                                                   <!--   <div class="col-md-3 col-sm-6">
                                                 <div class="certificate-box">
                                                     <div class=" fz-16"><p>Right to work Document</p></div>
                                                     <div class="box">
@@ -237,7 +271,7 @@
                                                   </div>
                                                 </div>
                                                 <div id="certificate5-error" class="cstm-error-image-div"></div>
-                                            </div>
+                                            </div> -->
                                                 </div>
                                                 
                                             </div>
@@ -260,18 +294,21 @@
                                         @csrf
                                         <div class="row">
                                             <div class="form-group col-12  mb-3">
+                                            <label class="label">Old Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="old_password" placeholder="Old Password" name="old_password" >
                                                
                                                 </div>
                                             </div>
                                             <div class="form-group col-12 mb-3">
+                                            <label class="label">New Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="new_password" placeholder="New Password" name="new_password" >
                                                 
                                                 </div>
                                             </div>
                                             <div class="form-group col-12  mb-3">
+                                            <label class="label">Confirm Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="confirm_password" >
                                                   
@@ -303,7 +340,12 @@
 @section('scripts')
 <script src="{{asset('custom/js/image-upload.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+
+
 <script type="text/javascript">
+    CKEDITOR.replace( 'about_us' );
+
 
  function myImgRemove(number) {
     swal({
@@ -422,31 +464,45 @@ $(".dropdown-item").click(function(){
         minlength:3,
          maxlength:35
       },
-      'title':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'utr_number':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
       'mobile_number':{
          required: true,
         nowhitespace: true,
          maxlength:10
       },
-      'dob':{
+      'company':{
          required: true,
         nowhitespace: true,
-        minlength:3,
-         maxlength:35
       },
-      'address':{
+    'address1':{
          required: true,
-        nowhitespace: true
+        nowhitespace: true,
       },
+    'address2':{
+         required: true,
+        nowhitespace: true,
+      },
+            'town_city':{
+         required: true,
+        nowhitespace: true,
+      },
+            'national_insurance_number':{
+         required: true,
+        nowhitespace: true,
+      },
+/*            'about_us':{
+         required: true,
+        nowhitespace: true,
+      },*/
+
+
+              'postcode':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+
+
+
       'certificate1':{
         //    required:function(){
         //    const certificate1 = '<?php echo isset($user->certificate1) && $user->certificate1!=null ? 'available' : '' ?>';
@@ -491,17 +547,17 @@ $(".dropdown-item").click(function(){
         // }, 
            extension: "jpg|jpeg|png|JPG|JPEG|PNG"
         },
-        'certificate5':{
-           required:function(){
-           const certificate5 = '<?php echo isset($user->certificate5) && $user->certificate5!=null ? 'available' : '' ?>';
-            if(certificate5=='available'){
-                return false;
-            }else{
-                return true;
-            }
-        }, 
-           extension: "jpg|jpeg|png|JPG|JPEG|PNG"
-        }
+        // 'certificate5':{
+        //    required:function(){
+        //    const certificate5 = '<?php echo isset($user->certificate5) && $user->certificate5!=null ? 'available' : '' ?>';
+        //     if(certificate5=='available'){
+        //         return false;
+        //     }else{
+        //         return true;
+        //     }
+        // }, 
+        //    extension: "jpg|jpeg|png|JPG|JPEG|PNG"
+        // }
       
       
     },
@@ -521,9 +577,9 @@ $(".dropdown-item").click(function(){
      'certificate4': { 
         extension :"jpeg,png,jpg are allowed."
      },
-     'certificate5': { 
+     /*'certificate5': { 
         extension :"jpeg,png,jpg are allowed."
-     }
+     }*/
      }
    });
 

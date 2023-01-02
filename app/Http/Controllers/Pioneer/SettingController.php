@@ -59,11 +59,19 @@ class SettingController extends Controller
       $user->first_name = $request->first_name;
       $user->last_name = $request->last_name;
       $user->mobile_number = (int)$request->mobile_number;
-      $user->dob = $request->dob;
+
+      $user->company = $request->company;
+      $user->address1 = $request->address1;
+        $user->address2 = $request->address2;
+    $user->town_city = $request->town_city;
+    $user->national_insurance_number = $request->national_insurance_number;
+    $user->about_us = $request->about_us;
+    $user->postcode = $request->postcode;
+      /*$user->dob = $request->dob;
       $user->address = $request->address;
 
       $user->title = $request->title;
-      $user->utr_number = $request->utr_number; 
+      $user->utr_number = $request->utr_number; */
         
        if (!empty($request->logo)){
           (isset($user->logo) && $user->logo!='null') ? (file_exists(public_path($user->logo)) ? unlink(public_path($user->logo)) : '') : '';
@@ -124,7 +132,7 @@ class SettingController extends Controller
         
     }
 
-    if (!empty($request->certificate5)){
+    /*if (!empty($request->certificate5)){
         (isset($user->certificate5) && $user->certificate5!='null') ? ( file_exists(public_path($user->certificate5)) ? unlink(public_path($user->certificate5)) : '') : '';
         $time = strtotime('now').Str::random(40);
         $ext = $request->certificate5->getClientOriginalExtension();
@@ -134,7 +142,7 @@ class SettingController extends Controller
 
         $user->certificate5 = $certificate5;
         
-    }
+    }*/
         
       $user->save();
       return response()->json(['status' => 1,'message' => 'Profile Updated Successfully.']);

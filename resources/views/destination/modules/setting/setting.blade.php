@@ -82,6 +82,7 @@
                                             <div class="row form-design">
                                                 <div class="form-group col-md-6 mb-lg-4 mb-3">
                                                     <div class="input-icon-wrpper">
+                                                        <label class="label">First Name</label>
                                                         <input  type="text" class="form-control" id="first_name" placeholder="First Name"
                                                 name="first_name" value="{{$user->first_name}}" disabled>
                                                      
@@ -89,85 +90,122 @@
                                                 </div>
                                                 <div class="form-group  col-md-6 mb-lg-4 mb-3">
                                                     <div class="input-icon-wrpper">
-                                                        <input  type="text" class="form-control" id="last_name" placeholder="Last Name"
+                                                    <label class="label">Surname</label>
+                                                        <input  type="text" class="form-control" id="last_name" placeholder="Surname"
                                                 name="last_name" value="{{$user->last_name}}" disabled>
                                                
                                                     </div>
                                                 </div>
                                                
-                                                <div class="form-group col-md-12 mb-lg-4 mb-3">
-                                                    <div class="input-icon-wrpper">
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Main Phone Number</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                   
                                                         <input type="text" class="form-control" id="mobile_number" maxlength="10" placeholder="Mobile Number"
                                                 name="mobile_number" value="{{(isset($user->mobile_number) && $user->mobile_number!='null') ? $user->mobile_number : ''}}" disabled>
                                                 <span class="tel-country-code">+44</span>
                                                   
                                                     </div>
                                                 </div>
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                            <div class="input-icon-wrpper">
+                                            <label class="label">Company</label>
+                                                <input type="text" class="form-control" id="company_name" placeholder="Company"
+                                                name="company" value="{{(isset($user->company) && $user->company!='null') ? $user->company : ''}}" disabled>
+                                            </div>
+                                        </div>
 
-                                                <div class="form-group col-12 mb-lg-4 mb-3">
+                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Website Address</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="website_address"  placeholder="Website Address"
+                                                name="website_address" value="{{(isset($user->website_address) && $user->website_address!='null') ? $user->website_address : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Address1</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="address1"  placeholder="Address1"
+                                                name="address1" value="{{(isset($user->address1) && $user->address1!='null') ? $user->address1 : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Main Contact Name</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="main_contact_name"  placeholder="Main Contact Name"
+                                                name="main_contact_name" value="{{(isset($user->main_contact_name) && $user->main_contact_name!='null') ? $user->main_contact_name : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Address2</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="address2"  placeholder="Address2"
+                                                name="address2" value="{{(isset($user->address2) && $user->address2!='null') ? $user->address2 : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
                                                     <div class="input-icon-wrpper">
-                                                        <input  type="text" class="form-control" id="email" placeholder="Email Id"
+                                                    <label class="label">Main Contact Email</label>
+                                                        <input  type="text" class="form-control" id="email" placeholder="Main Contact Email"
                                                 name="email" value="{{$user->email}}" disabled>
                                                 
                                                     </div>
                                                 </div>
                                                
                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="company_name" placeholder="Company Name"
-                                                name="company_name" value="{{(isset($user->company_name) && $user->company_name!='null') ? $user->company_name : ''}}" disabled>
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="vat_number" maxlength="9" placeholder="VAT Number"
-                                                name="vat_number" value="{{(isset($user->vat_number) && $user->vat_number!='null') ? $user->vat_number : ''}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="company_number" maxlength="10" placeholder="Phone Number"
-                                                name="company_number" value="{{(isset($user->company_number) && $user->company_number!='null') ? $user->company_number : ''}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="trading" placeholder="Trading Name"
-                                                name="trading" value="{{(isset($user->trading) && $user->trading!='null') ? $user->trading : ''}}" disabled>
-                                            </div>
-                                        </div>
+                                                <label class="label">Town/City</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="town_city"  placeholder="Town/City"
+                                                name="town_city" value="{{(isset($user->town_city) && $user->town_city!='null') ? $user->town_city : ''}}" disabled>
+                                                    </div>
+                                                </div>
 
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="title" placeholder="Title"
-                                                name="title" value="{{(isset($user->title) && $user->title!='null') ? $user->title : ''}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="position" placeholder="Position"
-                                                name="position" value="{{(isset($user->position) && $user->position!='null') ? $user->position : ''}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="website" placeholder="Website"
-                                                name="website" value="{{(isset($user->website) && $user->website!='null') ? $user->website : ''}}" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <input type="text" class="form-control" id="billing_address" placeholder="Billing Address"
-                                                name="billing_address" value="{{(isset($user->billing_address) && $user->billing_address!='null') ? $user->billing_address : ''}}" disabled>
-                                            </div>
-                                        </div>
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Finance Name</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="finance_name"  placeholder="Finance Name" name="finance_name" value="{{(isset($user->finance_name) && $user->finance_name!='null') ? $user->finance_name : ''}}" disabled>
+                                                    </div>
+                                                </div>  
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Country</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="country"  placeholder="Country"
+                                                name="country" value="{{(isset($user->country) && $user->country!='null') ? $user->country : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Finance Email</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="finance_email"  placeholder="Finance Email"
+                                                name="finance_email" value="{{(isset($user->finance_email) && $user->finance_email!='null') ? $user->finance_email : ''}}" disabled>
+                                                    </div>
+                                                </div>                                        
+                                        
+                                                <div class="form-group col-md-6 mb-lg-5 mb-md-4 mb-3">
+                                                <label class="label">Postcode</label>
+                                                    <div class="input-icon-wrpper" style="position:relative;">
+                                                        <input type="text" class="form-control" id="postcode"  placeholder="Postcode"
+                                                name="postcode" value="{{(isset($user->postcode) && $user->postcode!='null') ? $user->postcode : ''}}" disabled>
+                                                    </div>
+                                                </div>
+
+                                        
+                                        
+                                        
+                                        
                                             </div>
                                                                                  
                                         </div>
                                         <div class="form-group icon-form col-12 mb-lg-4 mb-3">
-                                            <div class="input-icon-wrpper">
-                                                <textarea class="form-control " rows="16" placeholder="Address" disabled>{{(isset($user->address) && $user->address!='null') ? Auth::user()->address : '' }}</textarea>
+                                            <div class="input-icon-wrpper1">
+                                            <label class="label">About Us</label>
+                                                <textarea class="form-control " rows="8" name="about_us" placeholder="About Us" >{{(isset($user->about_us) && $user->about_us!='null') ? Auth::user()->about_us : '' }}</textarea>
                                             
                                             </div>
                                         </div>
@@ -183,7 +221,7 @@
                                                     <div class="col-lg-3 col-sm-6">
                                                         <div class="certificate-box">
                                                             
-                                                            <div class=" fz-16"><p>Insurance Document</p></div>
+                                                            <div class=" fz-16"><p>Employers Liability Insurance</p></div>
                                                              <div class="box">
                                                     <div class="js--image-preview certificate1-preview1" style="background-image:url('{{(isset($user->certificate1) && $user->certificate1!='null') ? asset(Auth::user()->certificate1) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(1)" style="display:none"><i class="fas fa-times"></i></a>
@@ -204,7 +242,7 @@
 
                                                     <div class="col-lg-3 col-sm-6">
                                                     <div class="certificate-box">
-                                                            <div class="fz-16"><p>Certificate 1</p></div>
+                                                            <div class="fz-16"><p>Health & Safety</p></div>
                                                              <div class="box">
                                                     <div class="js--image-preview certificate1-preview2" style="background-image:url('{{(isset($user->certificate2) && $user->certificate2!='null') ? asset(Auth::user()->certificate2) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(2)" style="display:none"><i class="fas fa-times"></i></a>
@@ -224,7 +262,7 @@
                                                     <div class="col-lg-3 col-sm-6">
                                                      
                                                     <div class="certificate-box"> 
-                                                            <div class=" fz-16"><p>Certificate 2</p></div>
+                                                            <div class=" fz-16"><p>CHAS</p></div>
                                                             <div class="box">
                                                     <div class="js--image-preview certificate1-preview3" style="background-image:url('{{(isset($user->certificate3) && $user->certificate3!='null') ? asset(Auth::user()->certificate3) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(3)" style="display:none"><i class="fas fa-times"></i></a>
@@ -242,7 +280,7 @@
                                                     
                                                     <div class="col-lg-3 col-sm-6">
                                                     <div class="certificate-box">    
-                                                        <div class=" fz-16"><p>Certificate 3</p></div>
+                                                        <div class=" fz-16"><p>ISO</p></div>
                                                            <div class="box">
                                                     <div class="js--image-preview certificate1-preview4" style="background-image:url('{{(isset($user->certificate4) && $user->certificate4!='null') ? asset(Auth::user()->certificate4) : 'images/Resgister-step/certificate1.png'}}');">
                                                         <a href="javascript:void(0)" class="remove_prev_image" onclick="myImgRemove(4)" style="display:none"><i class="fas fa-times"></i></a>
@@ -280,18 +318,21 @@
                                         @csrf
                                         <div class="row">
                                             <div class="form-group col-12  mb-3">
+                                            <label class="label">Old Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="old_password" placeholder="Old Password" name="old_password" >
                                                
                                                 </div>
                                             </div>
                                             <div class="form-group col-12 mb-3">
+                                            <label class="label">New Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="new_password" placeholder="New Password" name="new_password" >
                                                 
                                                 </div>
                                             </div>
                                             <div class="form-group col-12  mb-3">
+                                            <label class="label">Confirm Password</label>
                                                 <div class="input-icon-wrpper">
                                                     <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="confirm_password" >
                                                   
@@ -326,8 +367,9 @@
 @section('scripts')
 <script src="{{asset('custom/js/image-upload.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 <script type="text/javascript">
-
+    CKEDITOR.replace( 'about_us' );
  function myImgRemove(number) {
     swal({
   title: "Are you sure?",
@@ -448,49 +490,57 @@ $(".cstm-drp-down").click(function(){
         nowhitespace: true,
          maxlength:10
       },
-      'company_name':{
+      'company':{
          required: true,
-        nowhitespace: true,
+        nowhitespace: true,        
          maxlength:35
-      },
-
-      'title':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'position':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'website':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'billing_address':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
-      'company_number':{
-         required: true,
-        nowhitespace: true,
-        maxlength:10
-      },
-
-      'vat_number':{
-         required: true,
-        nowhitespace: true,
-        minlength:9,
-         maxlength:9
-      },
-      'trading':{
-         required: true,
-        nowhitespace: true,
-         maxlength:35
-      },
+        },
+        'website_address':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'address1':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'main_contact_name':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'address2':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'town_city':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'finance_name':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'country':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'finance_email':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+        'postcode':{
+                 required: true,
+                nowhitespace: true,        
+                 maxlength:35
+        },
+     
       'certificate1':{
         //required:true,
         //    required:function(){

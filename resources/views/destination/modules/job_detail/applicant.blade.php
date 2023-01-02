@@ -49,11 +49,9 @@
                                             <p class="mt-3">{{$a->proposal}}</p>
                                         </div>
                                         <div class="job-card-btn">
-                                                @if($a->interested==0)
-                                                <a href="javascript:void(0)" class="edit-btn btn popup-btn f_message" data-job_id="{{$job_id}}" data-applicant_id="{{$a->applicant->_id}}">Message</a>
-                                                @else
+                                                
                                                 <a href="{{route('destination.chat.param',[$job_id,$a->applicant->_id])}}" class="edit-btn btn popup-btn " data-job_id="{{$job_id}}" data-applicant_id="{{$a->applicant->_id}}">Message</a>
-                                                @endif
+                                                
                                                 <a href="{{route('destination.proposal',[$job_id,$a->_id])}}" class="edit-btn btn ">View Details</a>
 
                                             </div>

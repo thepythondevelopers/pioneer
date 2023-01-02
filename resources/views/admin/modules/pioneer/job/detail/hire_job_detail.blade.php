@@ -21,7 +21,7 @@
                                     <div class="icon-img">
                                         <img src="{{asset('pioneer/images/icons/hurly-rate.png')}}">
                                     </div>
-                                    <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} USD/hr</p>
+                                    <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} {{currency()}}/hr</p>
                                 </li>
                                 <li>
                                     <div class="icon-img">
@@ -46,7 +46,7 @@
                                 </li>
 
                             </ul>
-                            <p class="fz-18 mb-5">{{$job->description}}</p>
+                            <p class="fz-18 mb-5">{!! $job->description !!}</p>
 
                             <h6 class="mb-2 fw-bold">Your Purposal</h6>
                             <p class="fz-18">{{$job->pioneer_applicant_user->proposal}}</p>

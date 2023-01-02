@@ -19,7 +19,7 @@
                               <div class="icon-img">
                                 <img src="{{asset('pioneer/images/icons/hurly-rate.png')}}">
                               </div>
-                              <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} USD/hr</p>
+                              <p class="mb-0 fw-600">Hourly Rate - {{$job->hour_rate}} {{currency()}}/hr</p>
                             </li>
                             <li>
                               <div class="icon-img">

@@ -4,11 +4,13 @@
 
 @section('content')
   <!-- Start Job Details Section -->
+  <section class="inner-banner bg">
+        <div class="container container-1440 innercontent_wrp">
+            <h2>Job detail</h2>
+        </div>
+    </section>
     <div class="job-detail p-60">
         <div class="container">
-            <div class="heading-wrapper text-uppercase mb-md-0 mb-5">
-                <h3 class="heading after-line grey-line">Job detail</h3>
-            </div>
 
             <div class="job-detail-card  shadow br-10 d-flex align-items-center p-4 border-radius">
                 <div class="row">

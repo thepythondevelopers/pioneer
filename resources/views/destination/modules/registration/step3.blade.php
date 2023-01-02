@@ -60,9 +60,10 @@
                                                         <div class="err-msg-wrap">
                                 
                              </div>
+                             <div>
                             <a href="{{route('destination.register.step2')}}" name="previous" class="previous primary-btn bg-dark action-button-previous">Previous</a>
-                            <div class="step-button">
-                            <button type="submit"  class="primary-btn">Submit</button>
+                            
+                            <button type="submit"  class="edit-btn">Submit</button>
                             </div>
                         </fieldset>
                     </form>
